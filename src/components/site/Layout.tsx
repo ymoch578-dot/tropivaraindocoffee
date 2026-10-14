@@ -1,0 +1,141 @@
+import { Link } from "@tanstack/react-router";
+import { useState, type ReactNode } from "react";
+import { Menu, X } from "lucide-react";
+import { useI18n } from "@/i18n/LanguageProvider";
+import { BUSINESS_EMAIL, hasWhatsApp, whatsappLink } from "@/config/contact";
+import type { Lang } from "@/i18n/translations";
+
+export function Logo({ light = false }: { light?: boolean }) {
+  return (
+    <span className={`inline-flex items-center gap-2 ${light ? "text-forest-foreground" : "text-forest"}`}>
+      <svg viewBox="0 0 32 32" className="h-7 w-7" aria-hidden="true">
+        <ellipse cx="16" cy="16" rx="10" ry="14" fill="currentColor" />
+        <path d="M16 3c-4 6 4 20 0 26" stroke="var(--color-background)" strokeWidth="1.6" fill="none" />
+      </svg>
+      <span className="font-display text-2xl tracking-tight">Tropivara</span>
+    </span>
+  );
+}
+
+function LangSwitch() {
+  const { lang, setLang, t } = useI18n();
+  return (
+    <div role="group" aria-label={t.nav.language} className="flex rounded-sm border border-border text-xs font-semibold">
+      {(["en", "id"] as Lang[]).map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => setLang(l)}
+          aria-pressed={lang === l}
+          lang={l}
+          className={`px-2.5 py-1.5 uppercase tracking-wider transition-colors ${lang === l ? "bg-forest text-forest-foreground" : "text-muted-foreground hover:text-foreground"}`}
+        >
+          {l === "en" ? "EN" : "ID"}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+const navItems = ["about", "products", "origins", "quality", "contact"] as const;
+const paths = { about: "/about", products: "/products", origins: "/origins", quality: "/quality", contact: "/contact" } as const;
+
+export function Header() {
+  const { t } = useI18n();
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+      <div className="container-page flex h-16 items-center justify-between gap-4">
+        <Link to="/" aria-label="Tropivara — home" onClick={() => setOpen(false)}><Logo /></Link>
+        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
+          {navItems.map((k) => (
+            <Link key={k} to={paths[k]} className="text-sm text-foreground/80 hover:text-forest" activeProps={{ className: "text-forest font-semibold" }}>
+              {t.nav[k]}
+            </Link>
+          ))}
+        </nav>
+        <div className="flex items-center gap-3">
+          <LangSwitch />
+          <Link to="/contact" className="btn btn-primary hidden md:inline-flex !py-2">{t.nav.inquire}</Link>
+          <button type="button" className="lg:hidden p-2" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? t.nav.close : t.nav.menu} onClick={() => setOpen(!open)}>
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+      {open && (
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border lg:hidden">
+          <div className="container-page flex flex-col py-3">
+            {(["home", ...navItems] as const).map((k) => (
+              <Link key={k} to={k === "home" ? "/" : paths[k]} onClick={() => setOpen(false)} className="py-3 font-display text-xl border-b border-border/60 last:border-0">
+                {t.nav[k]}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      )}
+    </header>
+  );
+}
+
+export function Footer() {
+  const { t } = useI18n();
+  const wa = whatsappLink("Hello Tropivara");
+  return (
+    <footer className="bg-forest-deep text-forest-foreground">
+      <div className="container-page grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="space-y-4 max-w-sm">
+          <Logo light />
+          <p className="text-sm text-forest-foreground/75">{t.footer.tagline}</p>
+          <p className="font-display italic text-forest-foreground/60">"{t.home.quote}"</p>
+        </div>
+        <div>
+          <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.pages}</h2>
+          <ul className="space-y-2 text-sm">
+            {(["home", ...navItems] as const).map((k) => (
+              <li key={k}><Link to={k === "home" ? "/" : paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.contact}</h2>
+          <ul className="space-y-2 text-sm">
+            <li><a href={`mailto:${BUSINESS_EMAIL}`} className="hover:underline break-all">{BUSINESS_EMAIL}</a></li>
+            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp</a> : <span className="text-forest-foreground/60">WhatsApp: {t.common.whatsappSoon}</span>}</li>
+            <li className="text-forest-foreground/60">Indonesia</li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-forest-foreground/15">
+        <div className="container-page py-5 text-xs text-forest-foreground/60">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
+      </div>
+    </footer>
+  );
+}
+
+export function SiteLayout({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 btn btn-primary">Skip to content</a>
+      <Header />
+      <main id="main" className="flex-1">{children}</main>
+      <Footer />
+    </div>
+  );
+}
+
+export function DraftBadge({ className = "" }: { className?: string }) {
+  const { t } = useI18n();
+  return <span className={`inline-block rounded-sm bg-draft px-2 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-draft-foreground ${className}`}>{t.common.draft}</span>;
+}
+
+export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
+  return (
+    <section className="border-b border-border grain">
+      <div className="container-page py-16 md:py-24">
+        <p className="eyebrow">{eyebrow}</p>
+        <h1 className="mt-4 max-w-3xl text-4xl leading-[1.05] md:text-6xl text-forest-deep">{title}</h1>
+        {lead && <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{lead}</p>}
+      </div>
+    </section>
+  );
+}
