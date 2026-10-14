@@ -8,7 +8,7 @@ import { BUSINESS_EMAIL, mailtoLink, whatsappLink } from "@/config/contact";
 import { validateInquiry, type InquiryErrors, type InquiryInput } from "@/lib/inquiry";
 
 export const Route = createFileRoute("/contact")({
-  validateSearch: (s: Record<string, unknown>): { product?: string } => (typeof s.product === "string" ? { product: s.product } : {}),
+  validateSearch: (s: Record<string, unknown>): { product?: string } => (typeof s["product"] === "string" ? { product: s["product"] as string } : {}),
   head: () => ({
     meta: [
       { title: "Contact & Inquiries — Tropivara Green Coffee" },
