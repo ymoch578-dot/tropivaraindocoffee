@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { DraftBadge, PageHeader } from "@/components/site/Layout";
-import { InquiryCta } from "./index";
+import { InquiryCta } from "@/components/site/InquiryCta";
 import cherries from "@/assets/cherries.jpg";
 
 export const Route = createFileRoute("/about")({

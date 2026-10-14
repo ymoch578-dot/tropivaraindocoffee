@@ -3,7 +3,7 @@ import { useI18n } from "@/i18n/LanguageProvider";
 import { PageHeader } from "@/components/site/Layout";
 import { originImage } from "@/components/site/ProductCard";
 import { origins, products } from "@/data/products";
-import { InquiryCta } from "./index";
+import { InquiryCta } from "@/components/site/InquiryCta";
 
 export const Route = createFileRoute("/origins")({
   head: () => ({
