@@ -13,6 +13,8 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact & Inquiries — Tropivara Green Coffee" },
       { name: "description", content: "Send a B2B inquiry about Tropivara green coffee: samples, availability and supply arrangements." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Contact Tropivara" },
       { property: "og:description", content: "Inquire about Indonesian green coffee for your roastery or business." },
     ],

@@ -10,6 +10,8 @@ export const Route = createFileRoute("/origins")({
     meta: [
       { title: "Coffee Origins — Wonosalam, Gayo, Ijen, Temanggung, Pagar Alam | Tropivara" },
       { name: "description", content: "The five Indonesian origins in Tropivara's green coffee catalog, with species, altitude and available lots." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara Coffee Origins" },
       { property: "og:description", content: "Excelsa, Arabica and Robusta origins across Java, Sumatra and Aceh." },
     ],
@@ -28,7 +30,7 @@ function Origins() {
           return (
             <section key={o.id} id={o.id} className={`grid scroll-mt-24 items-center gap-10 border-b border-border py-14 md:grid-cols-2 ${i % 2 ? "md:[&>figure]:order-2" : ""}`}>
               <figure>
-                <img src={originImage(o.species)} alt={`${t.species[o.species]} coffee landscape — illustrative`} loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full object-cover" />
+                <img src={originImage(o.species)} alt="Coffee harvest — reference photograph, not this origin" loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full object-cover" />
                 <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
               </figure>
               <div>

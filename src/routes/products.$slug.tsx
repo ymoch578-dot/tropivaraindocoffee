@@ -18,6 +18,8 @@ export const Route = createFileRoute("/products/$slug")({
       meta: [
         { title: `${label} — Tropivara Green Coffee` },
         { name: "description", content: p ? `${label}: ${p.process.en}. ${p.flavor.en}. Moisture ${p.moisture}, ${p.screenDefect}.` : "Tropivara green coffee product." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { property: "og:title", content: `${label} — Tropivara` },
         { property: "og:description", content: p ? `${p.flavor.en}. ${p.process.en}.` : "Tropivara green coffee." },
       ],
@@ -54,7 +56,7 @@ function Detail() {
       </div>
       <section className="container-page grid gap-12 py-10 lg:grid-cols-[1fr_1.1fr]">
         <figure>
-          <img src={speciesImage[o.species]} alt={`${t.species[o.species]} coffee — illustrative`} width={1200} height={1200} className="aspect-square w-full object-cover" />
+          <img src={speciesImage[o.species]} alt="Unroasted coffee beans — reference photograph, not the actual lot" width={1200} height={1200} className="aspect-square w-full object-cover" />
           <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
         </figure>
         <div>

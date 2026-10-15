@@ -10,6 +10,8 @@ export const Route = createFileRoute("/products/")({
     meta: [
       { title: "Green Coffee Catalog — Tropivara" },
       { name: "description", content: "Eleven green coffee lots: Excelsa from Wonosalam, Arabica from Gayo and Ijen, Robusta from Temanggung and Pagar Alam." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara Green Coffee Catalog" },
       { property: "og:description", content: "Specifications for every Excelsa, Arabica and Robusta lot. Pricing on inquiry." },
     ],

@@ -2,13 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { DraftBadge, PageHeader } from "@/components/site/Layout";
 import { InquiryCta } from "@/components/site/InquiryCta";
-import cherries from "@/assets/cherries.jpg";
+import cherries from "@/assets/coffee-harvest-photo.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Tropivara — Indonesian Green Coffee Supplier" },
       { name: "description", content: "Who Tropivara is, how we work with business buyers, and our commitment to transparent product information." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "About Tropivara" },
       { property: "og:description", content: "An Indonesian green coffee supplier for wholesalers, roasters and coffee manufacturers." },
     ],
@@ -36,7 +38,7 @@ function About() {
       </section>
       <section className="border-y border-border bg-secondary/50">
         <div className="container-page grid gap-12 py-20 md:grid-cols-2">
-          <img src={cherries} alt="Ripe coffee cherries on the branch — illustrative" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+          <img src={cherries.url} alt="Hand holding harvested coffee cherries — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
           <div>
             <h2 className="text-3xl md:text-4xl text-forest-deep">{a.approachT}</h2>
             <ol className="mt-8 space-y-6">

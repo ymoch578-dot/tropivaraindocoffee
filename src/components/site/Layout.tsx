@@ -4,16 +4,11 @@ import { Menu, X } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { BUSINESS_EMAIL, hasWhatsApp, whatsappLink } from "@/config/contact";
 import type { Lang } from "@/i18n/translations";
+import logo from "@/assets/tropivara-official-logo.jpg.asset.json";
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <span className={`inline-flex items-center gap-2 ${light ? "text-forest-foreground" : "text-forest"}`}>
-      <svg viewBox="0 0 32 32" className="h-7 w-7" aria-hidden="true">
-        <ellipse cx="16" cy="16" rx="10" ry="14" fill="currentColor" />
-        <path d="M16 3c-4 6 4 20 0 26" stroke="var(--color-background)" strokeWidth="1.6" fill="none" />
-      </svg>
-      <span className="font-display text-2xl tracking-tight">Tropivara</span>
-    </span>
+    <img src={logo.url} alt="Tropivara Indonesia" width={650} height={530} className={light ? "h-auto w-52 object-contain" : "h-20 w-[6.5rem] object-contain"} />
   );
 }
 
@@ -45,7 +40,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+      <div className="container-page flex h-24 items-center justify-between gap-4">
         <Link to="/" aria-label="Tropivara — home" onClick={() => setOpen(false)}><Logo /></Link>
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navItems.map((k) => (
