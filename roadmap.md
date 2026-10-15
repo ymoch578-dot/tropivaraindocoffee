@@ -1,3 +1,3 @@
-- [ ] Place the supplied official logo and derive its favicon.
-- [ ] Replace synthetic coffee imagery with natural, real photographs and preserve illustrative disclaimers.
-- [ ] Verify logo and photos on the website.
+- [x] Place the supplied official logo and derive its favicon.
+- [x] Replace synthetic coffee imagery with natural, real photographs and preserve illustrative disclaimers.
+- [x] Verify logo and photos on all seven pages, including a small-screen check.

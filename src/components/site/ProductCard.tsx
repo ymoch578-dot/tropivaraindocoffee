@@ -6,7 +6,7 @@ import beans from "@/assets/green-coffee-photo.jpg.asset.json";
 import harvest from "@/assets/coffee-harvest-photo.jpg.asset.json";
 
 export const speciesImage: Record<Species, string> = { excelsa: beans.url, arabica: beans.url, robusta: beans.url };
-export const originImage = (species: Species) => (species === "arabica" ? harvest.url : harvest.url);
+export const originImage = (_species: Species) => harvest.url;
 
 export function ProductCard({ product }: { product: Product }) {
   const { t, lang } = useI18n();
