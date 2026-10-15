@@ -4,11 +4,12 @@ import { Menu, X } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { BUSINESS_EMAIL, hasWhatsApp, whatsappLink } from "@/config/contact";
 import type { Lang } from "@/i18n/translations";
-import logo from "@/assets/tropivara-official-logo.jpg.asset.json";
+import logo from "@/assets/tropivara-logo-transparent.png";
+import logoLight from "@/assets/tropivara-logo-light.png";
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <img src={logo.url} alt="Tropivara Indonesia" width={650} height={530} className={light ? "h-auto w-52 object-contain" : "h-20 w-[6.5rem] object-contain"} />
+    <img src={light ? logoLight : logo} alt="Tropivara Indonesia" width={1152} height={928} className={light ? "h-auto w-48" : "h-16 w-auto"} />
   );
 }
 
