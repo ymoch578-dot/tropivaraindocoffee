@@ -9,6 +9,8 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "About Tropivara — Indonesian Green Coffee Supplier" },
       { name: "description", content: "Who Tropivara is, how we work with business buyers, and our commitment to transparent product information." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "About Tropivara" },
       { property: "og:description", content: "An Indonesian green coffee supplier for wholesalers, roasters and coffee manufacturers." },
     ],

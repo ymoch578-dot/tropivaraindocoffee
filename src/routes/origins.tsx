@@ -10,6 +10,8 @@ export const Route = createFileRoute("/origins")({
     meta: [
       { title: "Coffee Origins — Wonosalam, Gayo, Ijen, Temanggung, Pagar Alam | Tropivara" },
       { name: "description", content: "The five Indonesian origins in Tropivara's green coffee catalog, with species, altitude and available lots." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara Coffee Origins" },
       { property: "og:description", content: "Excelsa, Arabica and Robusta origins across Java, Sumatra and Aceh." },
     ],

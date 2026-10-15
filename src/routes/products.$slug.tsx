@@ -18,6 +18,8 @@ export const Route = createFileRoute("/products/$slug")({
       meta: [
         { title: `${label} — Tropivara Green Coffee` },
         { name: "description", content: p ? `${label}: ${p.process.en}. ${p.flavor.en}. Moisture ${p.moisture}, ${p.screenDefect}.` : "Tropivara green coffee product." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { property: "og:title", content: `${label} — Tropivara` },
         { property: "og:description", content: p ? `${p.flavor.en}. ${p.process.en}.` : "Tropivara green coffee." },
       ],

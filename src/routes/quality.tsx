@@ -9,6 +9,8 @@ export const Route = createFileRoute("/quality")({
     meta: [
       { title: "Processing & Quality Control — Tropivara" },
       { name: "description", content: "Processing methods and grading data for Tropivara green coffee lots, as documented in our catalog." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Processing & Quality — Tropivara" },
       { property: "og:description", content: "Natural, pulp honey, anaerob and fully washed lots with documented moisture, screen and defect data." },
     ],

@@ -12,6 +12,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Tropivara — Indonesian Green Coffee for Roasters & Wholesalers" },
       { name: "description", content: "Green Excelsa, Arabica and Robusta beans from five Indonesian origins, supplied to wholesalers, roasters and coffee manufacturers." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara — Indonesian Green Coffee Supplier" },
       { property: "og:description", content: "B2B green coffee from Wonosalam, Gayo, Ijen, Temanggung and Pagar Alam." },
     ],
