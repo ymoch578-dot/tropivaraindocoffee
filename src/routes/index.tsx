@@ -4,8 +4,8 @@ import { useI18n } from "@/i18n/LanguageProvider";
 import { origins, products } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { InquiryCta } from "@/components/site/InquiryCta";
-import hero from "@/assets/hero-beans.jpg";
-import beds from "@/assets/drying-beds.jpg";
+import hero from "@/assets/green-coffee-photo.jpg.asset.json";
+import beds from "@/assets/coffee-harvest-photo.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +45,7 @@ function Home() {
             </dl>
           </div>
           <figure className="relative">
-            <img src={hero} alt="Unroasted green coffee beans spilling from a jute sack" width={1600} height={1072} className="aspect-[4/5] w-full object-cover lg:aspect-[4/5]" />
+            <img src={hero.url} alt="Close-up of real unroasted coffee beans" width={1600} height={1072} className="aspect-[4/5] w-full object-cover lg:aspect-[4/5]" />
             <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
           </figure>
         </div>
@@ -102,7 +102,7 @@ function Home() {
       </section>
 
       <section className="container-page grid items-center gap-12 py-20 md:grid-cols-2">
-        <img src={beds} alt="Coffee beans drying on raised wooden beds — illustrative" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+        <img src={beds.url} alt="Coffee harvest with cherries drying — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
         <div>
           <p className="eyebrow">{h.qcEyebrow}</p>
           <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.qcTitle}</h2>

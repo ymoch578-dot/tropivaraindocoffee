@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { DraftBadge, PageHeader } from "@/components/site/Layout";
 import { InquiryCta } from "@/components/site/InquiryCta";
-import beds from "@/assets/drying-beds.jpg";
+import beds from "@/assets/coffee-harvest-photo.jpg.asset.json";
 
 export const Route = createFileRoute("/quality")({
   head: () => ({
@@ -33,7 +33,7 @@ function Quality() {
       </section>
       <section className="border-y border-border bg-secondary/50">
         <div className="container-page grid gap-12 py-20 md:grid-cols-[1fr_1.2fr]">
-          <img src={beds} alt="Coffee drying on raised beds — illustrative" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+          <img src={beds.url} alt="Coffee cherries drying after harvest — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
           <div>
             <h2 className="text-3xl text-forest-deep">{q.methodsT}</h2>
             <dl className="mt-8 divide-y divide-border border-y border-border">
