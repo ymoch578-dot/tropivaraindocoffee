@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { BUSINESS_EMAIL, hasWhatsApp, whatsappLink } from "@/config/contact";
 import type { Lang } from "@/i18n/translations";
-import logo from "@/assets/tropivara-logo-display.jpg.asset.json";
+import logo from "@/assets/tropivara-official-logo.jpg.asset.json";
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
