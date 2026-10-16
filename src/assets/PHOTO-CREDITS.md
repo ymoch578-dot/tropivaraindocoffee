@@ -5,4 +5,4 @@ These real photographs are illustrative references, not Tropivara's farms, facil
 - `green-coffee-photo.jpg.asset.json`: Michael Burrows, [Heap of raw coffee beans drying in daylight](https://www.pexels.com/photo/heap-of-raw-coffee-beans-drying-in-daylight-7125601/), [Pexels License](https://www.pexels.com/license/).
 - `coffee-harvest-photo.jpg.asset.json`: roedy rustam, [Hand holding ripe coffee cherries with drying beans](https://unsplash.com/photos/hand-holding-ripe-coffee-cherries-with-drying-beans-XAq1_4YYDZs), Indonesia, [Unsplash License](https://unsplash.com/license/).
 
-The official logo is user-supplied; only empty outer margins were trimmed for display. Its original is retained as a separate asset pointer.
+The official logo is user-supplied; its original is retained as a separate asset pointer. `tropivara-logo-clean.png.asset.json` and `tropivara-logo-light-clean.png.asset.json` retain the existing display artwork with empty margins trimmed and residual white background removed, including enclosed spaces and edge halos. The existing gold variant is used on the dark footer.
