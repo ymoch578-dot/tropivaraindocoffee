@@ -10,4 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Use CDN asset pointers for imported brand imagery and real stock photography; keep attribution alongside the assets so their origin remains auditable.
-- The shared site Logo displays the supplied artwork unchanged apart from trimming empty margins; derive the local favicon from the same artwork.
+- The shared site Logo uses CDN pointers for the supplied artwork with transparent background and trimmed empty margins; retain its geometry and derive the local favicon from the same artwork so branding remains consistent.
