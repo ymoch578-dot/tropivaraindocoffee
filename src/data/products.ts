@@ -1,5 +1,6 @@
-// Product data transcribed from "Export Catalog – September 2026".
-// Prices are intentionally omitted (no public pricing). Only fields present in the catalog are listed.
+// Product data transcribed from "Tropivara Company Profile and Product Catalogue (EN v7)".
+// Prices are intentionally omitted (quotations only). Only fields present in the catalogue are listed;
+// a missing field means the catalogue does not list it for that product.
 import type { Lang } from "@/i18n/translations";
 
 type L = Record<Lang, string>;
@@ -12,85 +13,150 @@ export interface Origin {
   species: Species;
   speciesLabel: string;
   altitude?: string;
-  note?: L;
-  line: "Yatra" | "Tanah";
 }
 
 export interface Product {
   slug: string;
-  no: string;
+  ref: string; // catalogue reference, e.g. "TV-01"
   name: string;
   originId: string;
   tags: string[];
   process: L;
-  flavor: L;
-  moisture: string;
-  screenDefect: string;
-  capacity: L;
+  flavor?: L;
+  grade?: string;
+  screen?: string;
+  moisture?: string;
+  defects?: string;
+  volume?: L;
+  variety?: string;
+  altitude?: string;
+  acidity?: L;
 }
 
-export const lines = {
-  Yatra: { tagline: "The Indonesian Excelsa House", scope: "Excelsa · Wonosalam, East Java" },
-  Tanah: { tagline: "The Indonesian Arabica & Robusta House", scope: "Robusta & Arabica · Pan-Indonesia" },
-} as const;
-
 export const origins: Origin[] = [
-  { id: "wonosalam", title: "Wonosalam Rare Origins", location: "Wonosalam · Jombang · East Java", species: "excelsa", speciesLabel: "Excelsa (Liberica var. Dewevrei)", line: "Yatra" },
-  { id: "gayo", title: "Arabica Gayo", location: "Gayo Highlands · Aceh", species: "arabica", speciesLabel: "Arabica", altitude: "1,200–1,600 mdpl", line: "Tanah" },
-  { id: "ijen", title: "Arabica Ijen Highlands", location: "Banyuwangi · East Java", species: "arabica", speciesLabel: "Arabica", altitude: "1,200–1,500 mdpl", line: "Tanah" },
-  { id: "temanggung", title: "Robusta Temanggung", location: "Temanggung · Central Java", species: "robusta", speciesLabel: "Robusta", note: { en: "Routed via Semarang", id: "Dikirim melalui Semarang" }, line: "Tanah" },
-  { id: "pagar-alam", title: "Robusta Pagar Alam", location: "Pagar Alam · South Sumatra", species: "robusta", speciesLabel: "Robusta", altitude: "800–1,100 mdpl", line: "Tanah" },
+  { id: "wonosalam", title: "Wonosalam", location: "Jombang · East Java", species: "excelsa", speciesLabel: "Excelsa (Liberica var. Dewevrei)" },
+  { id: "gayo", title: "Gayo Highlands", location: "Aceh · Sumatra", species: "arabica", speciesLabel: "Arabica", altitude: "1,200–1,600 masl" },
+  { id: "ijen", title: "Ijen Highlands", location: "Banyuwangi · East Java", species: "arabica", speciesLabel: "Arabica", altitude: "1,200–1,500 masl" },
+  { id: "flores", title: "Flores", location: "East Nusa Tenggara", species: "arabica", speciesLabel: "Arabica", altitude: "1,100+ masl" },
+  { id: "arjuno", title: "Arjuno", location: "East Java", species: "arabica", speciesLabel: "Arabica", altitude: "Approx. 1,200–1,500 masl" },
+  { id: "temanggung", title: "Temanggung", location: "Central Java", species: "robusta", speciesLabel: "Robusta" },
+  { id: "dampit", title: "Dampit", location: "East Java", species: "robusta", speciesLabel: "Robusta" },
+  { id: "pagar-alam", title: "Pagar Alam", location: "South Sumatra", species: "robusta", speciesLabel: "Robusta", altitude: "800–1,100 masl" },
 ];
 
-const perSeason = (n: string): L => ({ en: `${n} Tons / season`, id: `${n} Ton / musim` });
-const perMonth = (n: string): L => ({ en: `${n} Tons / month`, id: `${n} Ton / bulan` });
-const perWeek = (n: string): L => ({ en: `${n} Tons / week`, id: `${n} Ton / minggu` });
+const perSeason = (n: string): L => ({ en: `About ${n} tons each season`, id: `Sekitar ${n} ton per musim` });
+const perMonth = (n: string): L => ({ en: `About ${n} tons a month`, id: `Sekitar ${n} ton per bulan` });
+const perWeek = (n: string): L => ({ en: `About ${n} tons a week`, id: `Sekitar ${n} ton per minggu` });
 
 export const products: Product[] = [
-  { slug: "excelsa-petik-merah-specialty", no: "01", name: "Excelsa Petik Merah | Specialty", originId: "wonosalam", tags: ["Rare Variety", "Hand-Picked"],
-    process: { en: "Pulp honey natural, hand-picked ripe cherry", id: "Pulp honey natural, ceri matang dipetik tangan" },
-    flavor: { en: "Dried fruit, caramel, cashew, jackfruit", id: "Buah kering, karamel, kacang mete, nangka" },
-    moisture: "10–12%", screenDefect: "Screen 14–15 / 10 defect pts", capacity: perSeason("4") },
-  { slug: "excelsa-grade-1", no: "02", name: "Excelsa Grade 1", originId: "wonosalam", tags: ["Rare Variety", "Pulp Honey"],
-    process: { en: "Pulp honey natural", id: "Pulp honey natural" },
-    flavor: { en: "Jackfruit, blueberry, chocolate finish", id: "Nangka, blueberry, akhir rasa cokelat" },
-    moisture: "10–12%", screenDefect: "Screen 14–15 / 25 defect pts", capacity: perSeason("24") },
-  { slug: "excelsa-natural-anaerob", no: "03", name: "Excelsa Natural Anaerob", originId: "wonosalam", tags: ["Rare Variety", "Anaerob"],
-    process: { en: "Natural Anaerob", id: "Natural Anaerob" },
-    flavor: { en: "Dark rum, ripe jackfruit, prune, cacao nibs", id: "Rum gelap, nangka matang, prune, cacao nibs" },
-    moisture: "10–13%", screenDefect: "Screen 14–15 / 25 defect pts", capacity: perSeason("5") },
-  { slug: "arabica-gayo-natural-grade-1", no: "04", name: "Natural Grade 1", originId: "gayo", tags: ["Natural", "Single Origin"],
-    process: { en: "Natural, sun-dried on raised beds", id: "Natural, dijemur matahari di para-para" },
-    flavor: { en: "Tropical fruit, syrupy body, dark chocolate, herbal finish", id: "Buah tropis, body kental seperti sirup, cokelat hitam, akhir rasa herbal" },
-    moisture: "≤12%", screenDefect: "Screen 16+ / ≤11 defect pts", capacity: perMonth("20") },
-  { slug: "arabica-gayo-natural-commercial", no: "05", name: "Natural Commercial", originId: "gayo", tags: ["Natural", "Single Origin"],
-    process: { en: "Natural, sun-dried on raised beds", id: "Natural, dijemur matahari di para-para" },
-    flavor: { en: "Dark chocolate, wet tobacco, cedar wood", id: "Cokelat hitam, tembakau basah, kayu cedar" },
-    moisture: "≤12%", screenDefect: "Screen 14+ / ≤80 defect pts", capacity: perMonth("20") },
-  { slug: "arabica-ijen-full-washed-grade-1", no: "06", name: "Full Washed Grade 1", originId: "ijen", tags: ["Fully Washed"],
-    process: { en: "Fully washed", id: "Fully washed" },
-    flavor: { en: "Bright & clean, citrus, bergamot", id: "Cerah & bersih, sitrus, bergamot" },
-    moisture: "≤12%", screenDefect: "Screen 16+ / ≤11 defect pts", capacity: perWeek("10") },
-  { slug: "arabica-ijen-natural-grade-1", no: "07", name: "Natural Grade 1", originId: "ijen", tags: ["Natural"],
-    process: { en: "Natural", id: "Natural" },
-    flavor: { en: "Citrus, mild acidity", id: "Sitrus, keasaman lembut" },
-    moisture: "≤12%", screenDefect: "Screen 16+ / ≤11 defect pts", capacity: perWeek("10") },
-  { slug: "robusta-temanggung-natural-grade-1", no: "08", name: "Natural Grade 1", originId: "temanggung", tags: ["Natural", "Sorted"],
-    process: { en: "Natural, sorted", id: "Natural, disortir" },
-    flavor: { en: "Earthy, tobacco, dark cocoa, heavy body", id: "Earthy, tembakau, kakao gelap, body tebal" },
-    moisture: "≤13%", screenDefect: "Screen 16 / ≤11 defect pts", capacity: perWeek("20") },
-  { slug: "robusta-temanggung-natural-grade-3", no: "09", name: "Natural Grade 3", originId: "temanggung", tags: ["Natural", "Sorted"],
-    process: { en: "Natural, sorted", id: "Natural, disortir" },
-    flavor: { en: "Bold dark cocoa, roasted peanut, heavy body, earthy undertones", id: "Kakao gelap yang tegas, kacang sangrai, body tebal, nuansa earthy" },
-    moisture: "≤13%", screenDefect: "Screen 14–16 / ≤80 defect pts", capacity: perWeek("20") },
-  { slug: "robusta-pagar-alam-grade-1", no: "10", name: "Grade 1", originId: "pagar-alam", tags: ["Natural", "Sorted"],
-    process: { en: "Natural, sorted", id: "Natural, disortir" },
-    flavor: { en: "Bold, heavy body, dark chocolate, earthy", id: "Tegas, body tebal, cokelat hitam, earthy" },
-    moisture: "≤15%", screenDefect: "Screen 16 / ≤11 defect pts", capacity: perWeek("10") },
-  { slug: "robusta-pagar-alam-commercial-grade", no: "11", name: "Commercial Grade", originId: "pagar-alam", tags: ["Unsorted"],
-    process: { en: "Natural", id: "Natural" },
-    flavor: { en: "Bold, earthy, lowland robusta character", id: "Tegas, earthy, karakter robusta dataran rendah" },
-    moisture: "15–18%", screenDefect: "Mixed, ungraded", capacity: perWeek("20") },
+  {
+    slug: "excelsa-hand-picked-red-cherry", ref: "TV-01", name: "Excelsa Hand-Picked Red Cherry", originId: "wonosalam",
+    tags: ["Rare Variety", "Hand-Picked"],
+    process: { en: "Pulp honey natural process using hand-picked ripe cherries", id: "Proses pulp honey natural dari ceri matang yang dipetik tangan" },
+    flavor: { en: "Dried fruit and caramel, with cashew and jackfruit", id: "Buah kering dan karamel, dengan kacang mete dan nangka" },
+    screen: "14–15", moisture: "10–12%", defects: "10 defect points", volume: perSeason("4"),
+  },
+  {
+    slug: "excelsa-grade-1", ref: "TV-02", name: "Grade 1 Excelsa", originId: "wonosalam",
+    tags: ["Rare Variety", "Pulp Honey"],
+    process: { en: "Pulp honey natural process", id: "Proses pulp honey natural" },
+    flavor: { en: "Jackfruit and blueberry, finishing with chocolate", id: "Nangka dan blueberry, dengan akhir rasa cokelat" },
+    grade: "Grade 1", screen: "14–15", moisture: "10–12%", defects: "25 defect points", volume: perSeason("24"),
+  },
+  {
+    slug: "excelsa-anaerobic-natural", ref: "TV-03", name: "Anaerobic Natural Excelsa", originId: "wonosalam",
+    tags: ["Rare Variety", "Anaerobic"],
+    process: { en: "Anaerobic natural process", id: "Proses natural anaerob" },
+    flavor: { en: "Dark rum and prune alongside ripe jackfruit and cacao nibs", id: "Rum gelap dan prune bersama nangka matang dan cacao nibs" },
+    screen: "14–15", moisture: "10–13%", defects: "25 defect points", volume: perSeason("5"),
+  },
+  {
+    slug: "gayo-natural-grade-1", ref: "TV-04", name: "Grade 1 Natural Arabica", originId: "gayo",
+    tags: ["Natural", "Single Origin"],
+    process: { en: "Natural process, dried in the sun on raised beds", id: "Proses natural, dijemur matahari di para-para" },
+    flavor: { en: "Tropical fruit with a syrupy body, dark chocolate and a herbal finish", id: "Buah tropis dengan body kental seperti sirup, cokelat hitam, dan akhir rasa herbal" },
+    grade: "Grade 1", screen: "16+", moisture: "≤12%", defects: "≤11 defect points", volume: perMonth("20"),
+  },
+  {
+    slug: "gayo-natural-commercial", ref: "TV-05", name: "Commercial Grade Natural Arabica", originId: "gayo",
+    tags: ["Natural", "Single Origin"],
+    process: { en: "Natural process, dried in the sun on raised beds", id: "Proses natural, dijemur matahari di para-para" },
+    flavor: { en: "Dark chocolate with wet tobacco and cedar wood", id: "Cokelat hitam dengan tembakau basah dan kayu cedar" },
+    grade: "Commercial grade", screen: "14+", moisture: "≤12%", defects: "≤80 defect points", volume: perMonth("20"),
+  },
+  {
+    slug: "gayo-semi-washed", ref: "TV-06", name: "Semi-Washed Arabica", originId: "gayo",
+    tags: ["Semi-Washed"],
+    process: { en: "Semi-washed process", id: "Proses semi-washed" },
+    flavor: { en: "Dark chocolate and nutty character with floral notes", id: "Karakter cokelat hitam dan nutty dengan sentuhan floral" },
+    variety: "Ateng", altitude: "1,400+ masl",
+  },
+  {
+    slug: "ijen-fully-washed-grade-1", ref: "TV-07", name: "Grade 1 Fully Washed Arabica", originId: "ijen",
+    tags: ["Fully Washed"],
+    process: { en: "Fully washed process", id: "Proses fully washed" },
+    flavor: { en: "A clean, bright cup with citrus and bergamot", id: "Cangkir bersih dan cerah dengan sitrus dan bergamot" },
+    grade: "Grade 1", screen: "16+", moisture: "≤12%", defects: "≤11 defect points", volume: perWeek("10"),
+  },
+  {
+    slug: "ijen-natural-grade-1", ref: "TV-08", name: "Grade 1 Natural Arabica", originId: "ijen",
+    tags: ["Natural"],
+    process: { en: "Natural process", id: "Proses natural" },
+    flavor: { en: "Citrus character with mild acidity", id: "Karakter sitrus dengan keasaman lembut" },
+    grade: "Grade 1", screen: "16+", moisture: "≤12%", defects: "≤11 defect points", volume: perWeek("10"),
+  },
+  {
+    slug: "flores-fully-washed", ref: "TV-09", name: "Fully Washed Arabica", originId: "flores",
+    tags: ["Fully Washed"],
+    process: { en: "Fully washed process", id: "Proses fully washed" },
+    flavor: { en: "A light cup with mild acidity and floral, woody notes", id: "Cangkir ringan dengan keasaman lembut serta sentuhan floral dan kayu" },
+    variety: "Typica, Lini S", altitude: "1,100+ masl",
+  },
+  {
+    slug: "arjuno-natural-grade-1", ref: "TV-10", name: "Grade 1 Natural Arabica", originId: "arjuno",
+    tags: ["Natural"],
+    process: { en: "Natural process", id: "Proses natural" },
+    flavor: { en: "Sweet and fruity, with caramel notes", id: "Manis dan fruity, dengan sentuhan karamel" },
+    grade: "Grade 1", altitude: "Approx. 1,200–1,500 masl",
+    acidity: { en: "Low to medium", id: "Rendah hingga sedang" },
+    moisture: "12%", defects: "≤10%",
+  },
+  {
+    slug: "temanggung-natural-grade-1", ref: "TV-11", name: "Grade 1 Natural Robusta", originId: "temanggung",
+    tags: ["Natural", "Sorted"],
+    process: { en: "Natural process, sorted", id: "Proses natural, disortir" },
+    flavor: { en: "Earthy, with tobacco and dark cocoa notes and a heavy body", id: "Earthy, dengan sentuhan tembakau dan kakao gelap serta body tebal" },
+    grade: "Grade 1", screen: "16", moisture: "≤13%", defects: "≤11 defect points", volume: perWeek("20"),
+  },
+  {
+    slug: "temanggung-natural-grade-3", ref: "TV-12", name: "Grade 3 Natural Robusta", originId: "temanggung",
+    tags: ["Natural", "Sorted"],
+    process: { en: "Natural process, sorted", id: "Proses natural, disortir" },
+    flavor: { en: "Bold dark cocoa and roasted peanut with earthy undertones and a heavy body", id: "Kakao gelap yang tegas dan kacang sangrai dengan nuansa earthy serta body tebal" },
+    grade: "Grade 3", screen: "14–16", moisture: "≤13%", defects: "≤80 defect points", volume: perWeek("20"),
+  },
+  {
+    slug: "dampit-natural-grade-1", ref: "TV-13", name: "Grade 1 Natural Robusta", originId: "dampit",
+    tags: ["Natural"],
+    process: { en: "Natural process", id: "Proses natural" },
+    grade: "Grade 1",
+    acidity: { en: "Low", id: "Rendah" },
+    defects: "≤10%",
+  },
+  {
+    slug: "pagar-alam-grade-1", ref: "TV-14", name: "Grade 1 Robusta", originId: "pagar-alam",
+    tags: ["Natural", "Sorted"],
+    process: { en: "Natural process, sorted", id: "Proses natural, disortir" },
+    flavor: { en: "Bold and heavy-bodied, with dark chocolate and earthy notes", id: "Tegas dan ber-body tebal, dengan sentuhan cokelat hitam dan earthy" },
+    grade: "Grade 1", screen: "16", moisture: "≤15%", defects: "≤11 defect points", volume: perWeek("10"),
+  },
+  {
+    slug: "pagar-alam-commercial", ref: "TV-15", name: "Commercial Grade Robusta", originId: "pagar-alam",
+    tags: ["Unsorted"],
+    process: { en: "Natural process, unsorted", id: "Proses natural, tidak disortir" },
+    flavor: { en: "Bold and earthy, with a lowland Robusta character", id: "Tegas dan earthy, dengan karakter robusta dataran rendah" },
+    grade: "Commercial, ungraded", screen: "Mixed sizes", moisture: "15–18%", defects: "Mixed", volume: perWeek("20"),
+  },
 ];
 
 export const getOrigin = (id: string) => origins.find((o) => o.id === id)!;
