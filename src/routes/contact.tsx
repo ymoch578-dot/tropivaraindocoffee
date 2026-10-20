@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { CheckCircle2, Mail, MessageCircle } from "lucide-react";
+import { CheckCircle2, Globe, Mail, MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { PageHeader } from "@/components/site/Layout";
 import { getProduct, productLabel, products } from "@/data/products";
-import { BUSINESS_EMAIL, mailtoLink, whatsappLink } from "@/config/contact";
+import { BUSINESS_EMAIL, WEBSITE_URL, mailtoLink, whatsappLink } from "@/config/contact";
 import { validateInquiry, type InquiryErrors, type InquiryInput } from "@/lib/inquiry";
 
 export const Route = createFileRoute("/contact")({
@@ -79,6 +79,7 @@ function Contact() {
             <h2 className="eyebrow">{c.direct}</h2>
             <div className="mt-4 flex flex-col gap-3">
               <a href={`mailto:${BUSINESS_EMAIL}`} className="btn btn-outline justify-start text-forest"><Mail className="h-4 w-4" /> <span className="break-all">{BUSINESS_EMAIL}</span></a>
+              <a href={WEBSITE_URL} target="_blank" rel="noreferrer" className="btn btn-outline justify-start text-forest"><Globe className="h-4 w-4" /> {c.website}: {WEBSITE_URL.replace("https://", "")}</a>
               {whatsappLink("Hello Tropivara") ? (
                 <a href={whatsappLink(`${c.greeting}`)!} target="_blank" rel="noreferrer" className="btn btn-outline justify-start text-forest"><MessageCircle className="h-4 w-4" /> {t.common.whatsapp}</a>
               ) : (
@@ -128,6 +129,16 @@ function Contact() {
               <p className="text-xs text-muted-foreground">{c.formNote}</p>
             </form>
           )}
+        </div>
+      </section>
+      <section className="border-t border-border bg-secondary/50">
+        <div className="container-page py-16">
+          <h2 className="text-3xl text-forest-deep">{c.faqT}</h2>
+          <dl className="mt-8 grid gap-px bg-border md:grid-cols-2">
+            {c.faq.map((f) => (
+              <div key={f.q} className="bg-background p-6"><dt className="font-medium text-forest-deep">{f.q}</dt><dd className="mt-2 text-sm text-muted-foreground">{f.a}</dd></div>
+            ))}
+          </dl>
         </div>
       </section>
     </>

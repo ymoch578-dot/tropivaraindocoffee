@@ -3,6 +3,7 @@
 // While empty, WhatsApp buttons display a "number coming soon" state instead of a fake link.
 export const WHATSAPP_NUMBER = "";
 export const BUSINESS_EMAIL = "salestropivaraindo@gmail.com";
+export const WEBSITE_URL = "https://tropivaraindo.biz.id";
 
 export const hasWhatsApp = () => /^\d{8,15}$/.test(WHATSAPP_NUMBER);
 

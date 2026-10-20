@@ -21,8 +21,9 @@ describe("inquiry rules", () => {
   it("has no WhatsApp link until a number is configured", () => {
     expect(whatsappLink("hi")).toBeNull();
   });
-  it("catalog has 11 products with no price field", () => {
-    expect(products).toHaveLength(11);
+  it("catalog has 15 products across 8 origins with no price field", () => {
+    expect(products).toHaveLength(15);
+    expect(new Set(products.map((p) => p.originId)).size).toBe(8);
     expect(products.some((p) => "price" in p)).toBe(false);
   });
 });
