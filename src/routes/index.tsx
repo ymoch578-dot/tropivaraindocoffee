@@ -11,20 +11,20 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tropivara — Indonesian Green Coffee for Roasters & Wholesalers" },
-      { name: "description", content: "Green Excelsa, Arabica and Robusta beans from five Indonesian origins, supplied to wholesalers, roasters and coffee manufacturers." },
+      { name: "description", content: "Green Excelsa, Arabica and Robusta beans from eight Indonesian origins, supplied to wholesalers, roasters and coffee manufacturers." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara — Indonesian Green Coffee Supplier" },
-      { property: "og:description", content: "B2B green coffee from Wonosalam, Gayo, Ijen, Temanggung and Pagar Alam." },
+      { property: "og:description", content: "B2B green coffee from Wonosalam, Gayo, Ijen, Flores, Arjuno, Temanggung, Dampit and Pagar Alam." },
     ],
   }),
   component: Home,
 });
 
-const featured = ["excelsa-petik-merah-specialty", "arabica-gayo-natural-grade-1", "arabica-ijen-full-washed-grade-1", "robusta-temanggung-natural-grade-1"];
+const featured = ["excelsa-hand-picked-red-cherry", "gayo-natural-grade-1", "ijen-fully-washed-grade-1", "temanggung-natural-grade-1"];
 
 function Home() {
-  const { t, lang } = useI18n();
+  const { t } = useI18n();
   const h = t.home;
   return (
     <>
@@ -59,14 +59,7 @@ function Home() {
           </div>
           <div className="space-y-6">
             <p className="text-lg text-forest-foreground/80">{h.introBody}</p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {(["Yatra", "Tanah"] as const).map((l) => (
-                <div key={l} className="border border-forest-foreground/20 p-5">
-                  <p className="font-display text-2xl">{l}</p>
-                  <p className="mt-1 text-sm text-forest-foreground/70">{l === "Yatra" ? "The Indonesian Excelsa House" : "The Indonesian Arabica & Robusta House"}</p>
-                </div>
-              ))}
-            </div>
+            <p className="font-display text-2xl italic text-accent">{h.quote}</p>
             <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline">{t.nav.about} <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </div>
@@ -90,10 +83,10 @@ function Home() {
             {origins.map((o, i) => (
               <li key={o.id}>
                 <Link to="/origins" hash={o.id} className="grid grid-cols-[2.5rem_1fr] items-baseline gap-4 py-5 hover:bg-background/60 md:grid-cols-[3rem_1.4fr_1fr_1fr]">
-                  <span className="font-display text-muted-foreground">0{i + 1}</span>
+                  <span className="font-display text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
                   <span className="font-display text-2xl text-forest-deep">{o.title}</span>
                   <span className="col-start-2 text-sm text-muted-foreground md:col-start-auto">{o.location}</span>
-                  <span className="col-start-2 text-sm md:col-start-auto">{t.species[o.species]}{o.altitude ? ` · ${o.altitude}` : ""}{o.note ? ` · ${o.note[lang]}` : ""}</span>
+                  <span className="col-start-2 text-sm md:col-start-auto">{t.species[o.species]}{o.altitude ? ` · ${o.altitude}` : ""}</span>
                 </Link>
               </li>
             ))}
@@ -113,10 +106,10 @@ function Home() {
 
       <section className="border-t border-border">
         <div className="container-page py-20">
-          <p className="eyebrow">{h.credEyebrow}</p>
-          <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.credTitle}</h2>
-          <div className="mt-10 grid gap-px bg-border md:grid-cols-3">
-            {h.cred.map((c, i) => (
+          <p className="eyebrow">{h.whyEyebrow}</p>
+          <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.whyTitle}</h2>
+          <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {h.why.map((c, i) => (
               <div key={c.t} className="bg-background p-7">
                 <span className="font-display text-coffee">0{i + 1}</span>
                 <h3 className="mt-3 text-2xl text-forest-deep">{c.t}</h3>
@@ -132,4 +125,3 @@ function Home() {
     </>
   );
 }
-
