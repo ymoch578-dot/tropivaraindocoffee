@@ -8,19 +8,19 @@ import { InquiryCta } from "@/components/site/InquiryCta";
 export const Route = createFileRoute("/origins")({
   head: () => ({
     meta: [
-      { title: "Coffee Origins — Wonosalam, Gayo, Ijen, Temanggung, Pagar Alam | Tropivara" },
-      { name: "description", content: "The five Indonesian origins in Tropivara's green coffee catalog, with species, altitude and available lots." },
+      { title: "Coffee Origins — Java, Sumatra & Flores | Tropivara" },
+      { name: "description", content: "The eight Indonesian origins in Tropivara's green coffee catalogue, with species, altitude and available products." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara Coffee Origins" },
-      { property: "og:description", content: "Excelsa, Arabica and Robusta origins across Java, Sumatra and Aceh." },
+      { property: "og:description", content: "Excelsa, Arabica and Robusta origins across Java, Sumatra and Flores." },
     ],
   }),
   component: Origins,
 });
 
 function Origins() {
-  const { t, lang } = useI18n();
+  const { t } = useI18n();
   return (
     <>
       <PageHeader eyebrow={t.originsPage.eyebrow} title={t.originsPage.title} lead={t.originsPage.lead} />
@@ -34,10 +34,10 @@ function Origins() {
                 <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
               </figure>
               <div>
-                <p className="eyebrow">0{i + 1} · {o.line}</p>
+                <p className="eyebrow">0{i + 1} · {t.species[o.species]}</p>
                 <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{o.title}</h2>
                 <dl className="mt-6 divide-y divide-border border-y border-border text-sm">
-                  {([[t.spec.origin, o.location], [t.spec.species, o.speciesLabel], [t.spec.altitude, o.altitude], [t.spec.note, o.note?.[lang]]] as [string, string | undefined][])
+                  {([[t.spec.origin, o.location], [t.spec.species, o.speciesLabel], [t.spec.altitude, o.altitude]] as [string, string | undefined][])
                     .filter(([, v]) => v).map(([k, v]) => (
                       <div key={k} className="grid grid-cols-[8rem_1fr] gap-4 py-3"><dt className="text-muted-foreground">{k}</dt><dd className="font-medium">{v}</dd></div>
                     ))}
@@ -45,7 +45,7 @@ function Origins() {
                 <h3 className="eyebrow mt-8">{t.originsPage.lots}</h3>
                 <ul className="mt-3 space-y-2">
                   {lots.map((p) => (
-                    <li key={p.slug}><Link to="/products/$slug" params={{ slug: p.slug }} className="text-forest underline-offset-4 hover:underline">No. {p.no} — {p.name}</Link></li>
+                    <li key={p.slug}><Link to="/products/$slug" params={{ slug: p.slug }} className="text-forest underline-offset-4 hover:underline">{p.ref} — {p.name}</Link></li>
                   ))}
                 </ul>
               </div>
