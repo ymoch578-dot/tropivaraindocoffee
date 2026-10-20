@@ -24,38 +24,42 @@ function About() {
   return (
     <>
       <PageHeader eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
-      <section className="container-page py-20">
-        <div className="flex items-center gap-3"><DraftBadge /><p className="text-sm text-muted-foreground">{t.common.draftNote}</p></div>
-        <div className="mt-8 grid gap-px bg-border md:grid-cols-3">
-          {[{ h: a.purposeT, b: a.purpose }, { h: a.visionT, b: a.vision }].map((x) => (
-            <div key={x.h} className="bg-background p-7"><h2 className="text-2xl text-forest-deep">{x.h}</h2><p className="mt-3 text-muted-foreground">{x.b}</p></div>
-          ))}
-          <div className="bg-background p-7">
-            <h2 className="text-2xl text-forest-deep">{a.missionT}</h2>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">{a.mission.map((m) => <li key={m}>{m}</li>)}</ul>
-          </div>
+      <section className="container-page grid gap-12 py-20 md:grid-cols-2">
+        <img src={cherries.url} alt="Hand holding harvested coffee cherries — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+        <div className="space-y-5">
+          {a.paragraphs.map((p) => <p key={p.slice(0, 24)} className="text-muted-foreground">{p}</p>)}
         </div>
       </section>
       <section className="border-y border-border bg-secondary/50">
-        <div className="container-page grid gap-12 py-20 md:grid-cols-2">
-          <img src={cherries.url} alt="Hand holding harvested coffee cherries — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
-          <div>
-            <h2 className="text-3xl md:text-4xl text-forest-deep">{a.approachT}</h2>
-            <ol className="mt-8 space-y-6">
-              {a.approach.map((x, i) => (
-                <li key={x.t} className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-border pt-5">
-                  <span className="font-display text-coffee">0{i + 1}</span>
-                  <div><h3 className="text-xl text-forest-deep">{x.t}</h3><p className="mt-1 text-muted-foreground">{x.d}</p></div>
-                </li>
-              ))}
-            </ol>
+        <div className="container-page py-20">
+          <div className="grid gap-px bg-border md:grid-cols-2">
+            <div className="bg-background p-7"><h2 className="text-2xl text-forest-deep">{a.visionT}</h2><p className="mt-3 text-muted-foreground">{a.vision}</p></div>
+            <div className="bg-background p-7">
+              <h2 className="text-2xl text-forest-deep">{a.missionT}</h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">{a.mission.map((m) => <li key={m}>{m}</li>)}</ul>
+            </div>
+          </div>
+          <h2 className="mt-16 text-3xl text-forest-deep">{a.valuesT}</h2>
+          <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
+            {a.values.map((v) => (
+              <div key={v.t} className="bg-background p-6"><h3 className="text-xl text-forest-deep">{v.t}</h3><p className="mt-2 text-sm text-muted-foreground">{v.d}</p></div>
+            ))}
           </div>
         </div>
       </section>
-      <section className="container-page grid gap-12 py-20 md:grid-cols-2">
-        <div><h2 className="text-3xl text-forest-deep">{a.transparencyT}</h2><p className="mt-4 text-lg text-muted-foreground">{a.transparency}</p></div>
-        <div className="border border-dashed border-draft-foreground/40 bg-draft/30 p-7">
-          <DraftBadge /><h2 className="mt-4 text-2xl text-forest-deep">{a.historyT}</h2><p className="mt-3 text-muted-foreground">{a.history}</p>
+      <section className="container-page py-20">
+        <h2 className="text-3xl text-forest-deep">{a.servicesT}</h2>
+        <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {a.services.map((s) => (
+            <div key={s.t} className="bg-background p-7"><h3 className="text-xl text-forest-deep">{s.t}</h3><p className="mt-2 text-sm text-muted-foreground">{s.d}</p></div>
+          ))}
+        </div>
+        <p className="mt-3 text-xs text-muted-foreground">{a.servicesNote}</p>
+        <div className="mt-16 grid gap-12 md:grid-cols-2">
+          <div><h2 className="text-3xl text-forest-deep">{a.priceTermsT}</h2><p className="mt-4 text-lg text-muted-foreground">{a.priceTerms}</p></div>
+          <div className="border border-dashed border-draft-foreground/40 bg-draft/30 p-7">
+            <DraftBadge /><h2 className="mt-4 text-2xl text-forest-deep">{a.historyT}</h2><p className="mt-3 text-muted-foreground">{a.history}</p>
+          </div>
         </div>
       </section>
       <InquiryCta />
