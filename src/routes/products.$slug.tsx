@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Mail, MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
-import { getOrigin, getProduct, lines, productLabel, products } from "@/data/products";
+import { getOrigin, getProduct, productLabel, products } from "@/data/products";
 import { ProductCard, speciesImage } from "@/components/site/ProductCard";
 import { mailtoLink, whatsappLink } from "@/config/contact";
 
@@ -17,11 +17,11 @@ export const Route = createFileRoute("/products/$slug")({
     return {
       meta: [
         { title: `${label} — Tropivara Green Coffee` },
-        { name: "description", content: p ? `${label}: ${p.process.en}. ${p.flavor.en}. Moisture ${p.moisture}, ${p.screenDefect}.` : "Tropivara green coffee product." },
+        { name: "description", content: p ? `${label}: ${p.process.en}.${p.flavor ? ` ${p.flavor.en}.` : ""}` : "Tropivara green coffee product." },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
         { property: "og:title", content: `${label} — Tropivara` },
-        { property: "og:description", content: p ? `${p.flavor.en}. ${p.process.en}.` : "Tropivara green coffee." },
+        { property: "og:description", content: p ? `${p.flavor ? `${p.flavor.en}. ` : ""}${p.process.en}.` : "Tropivara green coffee." },
       ],
     };
   },
@@ -34,19 +34,22 @@ function Detail() {
   const o = getOrigin(p.originId);
   const { t, lang } = useI18n();
   const label = productLabel(p);
-  const msg = `${t.contact.greeting}\n\n${t.common.inquire}: ${label} (No. ${p.no}).`;
+  const msg = `${t.contact.greeting}\n\n${t.common.inquire}: ${label} (${p.ref}).`;
   const wa = whatsappLink(msg);
   const rows: [string, string | undefined][] = [
-    [t.spec.line, `${o.line} — ${lines[o.line].tagline}`],
+    [t.spec.ref, p.ref],
     [t.spec.origin, o.location],
     [t.spec.species, o.speciesLabel],
-    [t.spec.altitude, o.altitude],
+    [t.spec.altitude, p.altitude ?? o.altitude],
     [t.spec.process, p.process[lang]],
-    [t.spec.flavor, p.flavor[lang]],
+    [t.spec.flavor, p.flavor?.[lang]],
+    [t.spec.grade, p.grade],
+    [t.spec.variety, p.variety],
+    [t.spec.screen, p.screen],
     [t.spec.moisture, p.moisture],
-    [t.spec.screen, p.screenDefect],
-    [t.spec.capacity, p.capacity[lang]],
-    [t.spec.note, o.note?.[lang]],
+    [t.spec.defects, p.defects],
+    [t.spec.acidity, p.acidity?.[lang]],
+    [t.spec.volume, p.volume?.[lang]],
   ];
   const related = products.filter((x) => x.originId === o.id && x.slug !== p.slug);
   return (
@@ -60,7 +63,7 @@ function Detail() {
           <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
         </figure>
         <div>
-          <p className="eyebrow">No. {p.no} · {o.title}</p>
+          <p className="eyebrow">{p.ref} · {o.title}</p>
           <h1 className="mt-3 text-4xl leading-tight text-forest-deep md:text-5xl">{p.name}</h1>
           <ul className="mt-4 flex flex-wrap gap-2">{p.tags.map((tag) => <li key={tag} className="border border-border px-2 py-1 text-xs uppercase tracking-wider">{tag}</li>)}</ul>
           <h2 className="eyebrow mt-10">{t.detail.specs}</h2>
@@ -69,7 +72,7 @@ function Detail() {
               <div key={k} className="grid grid-cols-[9rem_1fr] gap-4 py-3 text-sm sm:grid-cols-[11rem_1fr]"><dt className="text-muted-foreground">{k}</dt><dd className="font-medium">{v}</dd></div>
             ))}
           </dl>
-          <p className="mt-3 text-xs text-muted-foreground">{t.common.catalogSource}</p>
+          <p className="mt-3 text-xs text-muted-foreground">{t.common.catalogSource} · {t.common.volumeNote}</p>
           <div className="mt-10 bg-forest-deep p-7 text-forest-foreground">
             <h2 className="text-2xl">{t.detail.inquiryT}</h2>
             <p className="mt-2 text-sm text-forest-foreground/80">{t.detail.inquiryB}</p>

@@ -8,12 +8,12 @@ import { getOrigin, origins, products, type Species } from "@/data/products";
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Green Coffee Catalog — Tropivara" },
-      { name: "description", content: "Eleven green coffee lots: Excelsa from Wonosalam, Arabica from Gayo and Ijen, Robusta from Temanggung and Pagar Alam." },
+      { title: "Green Coffee Catalogue — Tropivara" },
+      { name: "description", content: "Fifteen green coffee products from eight Indonesian origins: Excelsa from Wonosalam, Arabica from Gayo, Ijen, Flores and Arjuno, Robusta from Temanggung, Dampit and Pagar Alam." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Tropivara Green Coffee Catalog" },
-      { property: "og:description", content: "Specifications for every Excelsa, Arabica and Robusta lot. Pricing on inquiry." },
+      { property: "og:title", content: "Tropivara Green Coffee Catalogue" },
+      { property: "og:description", content: "Specifications for every Excelsa, Arabica and Robusta product. Pricing on quotation." },
     ],
   }),
   component: Catalog,
@@ -42,7 +42,7 @@ function Catalog() {
             <div key={o.id} className="mt-14">
               <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border pb-3">
                 <h2 className="text-3xl text-forest-deep">{o.title}</h2>
-                <p className="text-sm text-muted-foreground">{o.location} · {o.speciesLabel}{o.altitude ? ` · ${o.altitude}` : ""}{o.note ? ` · ${o.note[lang]}` : ""}</p>
+                <p className="text-sm text-muted-foreground">{o.location} · {o.speciesLabel}{o.altitude ? ` · ${o.altitude}` : ""}</p>
               </div>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {list.map((p) => <ProductCard key={p.slug} product={p} />)}
@@ -50,7 +50,7 @@ function Catalog() {
             </div>
           );
         })}
-        <p className="mt-12 text-xs text-muted-foreground">{t.common.catalogSource} · {products.filter((p) => filter === "all" || getOrigin(p.originId).species === filter).length} {t.common.products}</p>
+        <p className="mt-12 text-xs text-muted-foreground">{t.common.catalogSource} · {products.filter((p) => filter === "all" || getOrigin(p.originId).species === filter).length} {t.common.products} · {t.common.volumeNote}</p>
       </section>
     </>
   );
