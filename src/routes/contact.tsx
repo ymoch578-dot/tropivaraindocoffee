@@ -4,7 +4,7 @@ import { CheckCircle2, Mail, MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { PageHeader } from "@/components/site/Layout";
 import { getProduct, productLabel, products } from "@/data/products";
-import { BUSINESS_EMAIL, mailtoLink, whatsappLink } from "@/config/contact";
+import { BUSINESS_EMAIL, WEBSITE_URL, mailtoLink, whatsappLink } from "@/config/contact";
 import { validateInquiry, type InquiryErrors, type InquiryInput } from "@/lib/inquiry";
 
 export const Route = createFileRoute("/contact")({
