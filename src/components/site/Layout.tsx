@@ -119,11 +119,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
-export function DraftBadge({ className = "" }: { className?: string }) {
-  const { t } = useI18n();
-  return <span className={`inline-block rounded-sm bg-draft px-2 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-draft-foreground ${className}`}>{t.common.draft}</span>;
-}
-
 export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
   return (
     <section className="border-b border-border grain">

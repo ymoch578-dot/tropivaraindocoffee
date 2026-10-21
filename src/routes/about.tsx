@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
-import { DraftBadge, PageHeader } from "@/components/site/Layout";
+import { PageHeader } from "@/components/site/Layout";
 import { InquiryCta } from "@/components/site/InquiryCta";
 import cherries from "@/assets/coffee-harvest-photo.jpg.asset.json";
 
@@ -55,11 +55,8 @@ function About() {
           ))}
         </div>
         <p className="mt-3 text-xs text-muted-foreground">{a.servicesNote}</p>
-        <div className="mt-16 grid gap-12 md:grid-cols-2">
-          <div><h2 className="text-3xl text-forest-deep">{a.priceTermsT}</h2><p className="mt-4 text-lg text-muted-foreground">{a.priceTerms}</p></div>
-          <div className="border border-dashed border-draft-foreground/40 bg-draft/30 p-7">
-            <DraftBadge /><h2 className="mt-4 text-2xl text-forest-deep">{a.historyT}</h2><p className="mt-3 text-muted-foreground">{a.history}</p>
-          </div>
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-3xl text-forest-deep">{a.priceTermsT}</h2><p className="mt-4 text-lg text-muted-foreground">{a.priceTerms}</p>
         </div>
       </section>
       <InquiryCta />

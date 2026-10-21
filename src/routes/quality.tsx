@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
-import { DraftBadge, PageHeader } from "@/components/site/Layout";
+import { PageHeader } from "@/components/site/Layout";
 import { InquiryCta } from "@/components/site/InquiryCta";
 import beds from "@/assets/coffee-harvest-photo.jpg.asset.json";
 
@@ -41,13 +41,6 @@ function Quality() {
             </dl>
             <p className="mt-3 text-xs text-muted-foreground">{q.methodsNote}</p>
           </div>
-        </div>
-      </section>
-      <section className="container-page py-20">
-        <div className="max-w-3xl border border-dashed border-draft-foreground/40 bg-draft/30 p-8">
-          <DraftBadge />
-          <h2 className="mt-4 text-3xl text-forest-deep">{q.draftT}</h2>
-          <p className="mt-3 text-muted-foreground">{q.draft}</p>
         </div>
       </section>
       <InquiryCta />
