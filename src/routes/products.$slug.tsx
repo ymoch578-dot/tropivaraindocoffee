@@ -60,7 +60,6 @@ function Detail() {
       <section className="container-page grid gap-12 py-10 lg:grid-cols-[1fr_1.1fr]">
         <figure>
           <img src={productImage(p)} alt={`${p.name} — green coffee beans`} width={606} height={800} className="aspect-square w-full object-cover" />
-          <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
         </figure>
         <div>
           <p className="eyebrow">{p.ref} · {o.title}</p>
