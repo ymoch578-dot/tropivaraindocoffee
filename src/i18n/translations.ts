@@ -4,7 +4,6 @@ const en = {
   nav: { home: "Home", about: "About", products: "Products", origins: "Origins", quality: "Processing & QC", contact: "Contact", inquire: "Send Inquiry", menu: "Menu", close: "Close", language: "Language" },
   common: {
     explore: "Explore Our Products", contactTeam: "Contact Our Team", viewDetails: "View details", inquire: "Inquire about this product",
-    draft: "Draft — for review", draftNote: "This section is draft content awaiting business approval before publication.",
     catalogSource: "Source: Tropivara Company Profile & Product Catalogue (EN v7)", whatsapp: "Chat on WhatsApp", whatsappSoon: "WhatsApp number coming soon",
     email: "Email us", back: "Back to catalog", allProducts: "All products", products: "products",
     imageNote: "Illustrative imagery — not Tropivara's own farms or facilities.",
@@ -153,7 +152,6 @@ const id: Dict = {
   nav: { home: "Beranda", about: "Tentang", products: "Produk", origins: "Asal Kopi", quality: "Proses & QC", contact: "Kontak", inquire: "Kirim Pertanyaan", menu: "Menu", close: "Tutup", language: "Bahasa" },
   common: {
     explore: "Lihat Produk Kami", contactTeam: "Hubungi Tim Kami", viewDetails: "Lihat detail", inquire: "Tanyakan produk ini",
-    draft: "Draf — untuk ditinjau", draftNote: "Bagian ini adalah konten draf yang menunggu persetujuan bisnis sebelum dipublikasikan.",
     catalogSource: "Sumber: Company Profile & Katalog Produk Tropivara (EN v7)", whatsapp: "Chat via WhatsApp", whatsappSoon: "Nomor WhatsApp segera tersedia",
     email: "Kirim email", back: "Kembali ke katalog", allProducts: "Semua produk", products: "produk",
     imageNote: "Gambar ilustrasi — bukan kebun atau fasilitas milik Tropivara.",
