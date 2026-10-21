@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { PageHeader } from "@/components/site/Layout";
-import { originImage } from "@/components/site/ProductCard";
 import { origins, products } from "@/data/products";
+import harvest from "@/assets/coffee-harvest-photo.jpg.asset.json";
 import { InquiryCta } from "@/components/site/InquiryCta";
 
 export const Route = createFileRoute("/origins")({
@@ -30,7 +30,7 @@ function Origins() {
           return (
             <section key={o.id} id={o.id} className={`grid scroll-mt-24 items-center gap-10 border-b border-border py-14 md:grid-cols-2 ${i % 2 ? "md:[&>figure]:order-2" : ""}`}>
               <figure>
-                <img src={originImage(o.species)} alt="Coffee harvest — reference photograph, not this origin" loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full object-cover" />
+                <img src={harvest.url} alt="Coffee harvest — reference photograph, not this origin" loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full object-cover" />
                 <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
               </figure>
               <div>

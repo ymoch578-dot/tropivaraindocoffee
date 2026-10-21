@@ -2,6 +2,28 @@
 // Prices are intentionally omitted (quotations only). Only fields present in the catalogue are listed;
 // a missing field means the catalogue does not list it for that product.
 import type { Lang } from "@/i18n/translations";
+import tv01 from "@/assets/tv-01.jpg.asset.json";
+import tv02 from "@/assets/tv-02.jpg.asset.json";
+import tv03 from "@/assets/tv-03.jpg.asset.json";
+import tv04 from "@/assets/tv-04.jpg.asset.json";
+import tv05 from "@/assets/tv-05.jpg.asset.json";
+import tv06 from "@/assets/tv-06.jpg.asset.json";
+import tv07 from "@/assets/tv-07.jpg.asset.json";
+import tv08 from "@/assets/tv-08.jpg.asset.json";
+import tv09 from "@/assets/tv-09.jpg.asset.json";
+import tv10 from "@/assets/tv-10.jpg.asset.json";
+import tv11 from "@/assets/tv-11.jpg.asset.json";
+import tv12 from "@/assets/tv-12.jpg.asset.json";
+import tv13 from "@/assets/tv-13.jpg.asset.json";
+import tv14 from "@/assets/tv-14.jpg.asset.json";
+import tv15 from "@/assets/tv-15.jpg.asset.json";
+
+// Real green-coffee photographs taken from the catalogue PDF, keyed by catalogue reference.
+const productImages: Record<string, string> = {
+  "TV-01": tv01.url, "TV-02": tv02.url, "TV-03": tv03.url, "TV-04": tv04.url, "TV-05": tv05.url,
+  "TV-06": tv06.url, "TV-07": tv07.url, "TV-08": tv08.url, "TV-09": tv09.url, "TV-10": tv10.url,
+  "TV-11": tv11.url, "TV-12": tv12.url, "TV-13": tv13.url, "TV-14": tv14.url, "TV-15": tv15.url,
+};
 
 type L = Record<Lang, string>;
 export type Species = "excelsa" | "arabica" | "robusta";
@@ -159,6 +181,7 @@ export const products: Product[] = [
   },
 ];
 
+export const productImage = (p: Product) => productImages[p.ref];
 export const getOrigin = (id: string) => origins.find((o) => o.id === id)!;
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 export const productLabel = (p: Product) => `${getOrigin(p.originId).title} — ${p.name}`;

@@ -4,7 +4,6 @@ const en = {
   nav: { home: "Home", about: "About", products: "Products", origins: "Origins", quality: "Processing & QC", contact: "Contact", inquire: "Send Inquiry", menu: "Menu", close: "Close", language: "Language" },
   common: {
     explore: "Explore Our Products", contactTeam: "Contact Our Team", viewDetails: "View details", inquire: "Inquire about this product",
-    draft: "Draft — for review", draftNote: "This section is draft content awaiting business approval before publication.",
     catalogSource: "Source: Tropivara Company Profile & Product Catalogue (EN v7)", whatsapp: "Chat on WhatsApp", whatsappSoon: "WhatsApp number coming soon",
     email: "Email us", back: "Back to catalog", allProducts: "All products", products: "products",
     imageNote: "Illustrative imagery — not Tropivara's own farms or facilities.",
@@ -68,7 +67,6 @@ const en = {
     ],
     priceTermsT: "Price terms",
     priceTerms: "Quotations may be offered on EXW, FOB, CNF or CIF terms, depending on the shipping route, logistics and the contract agreed between buyer and seller. Prices, delivery time and payment terms are given in each quotation and are not listed in the catalogue.",
-    historyT: "Company history", history: "[To be supplied by Tropivara: founding year, team, location of operations and other verified company details.]",
   },
   products: {
     eyebrow: "Product catalogue", title: "Green coffee catalogue",
@@ -107,8 +105,6 @@ const en = {
       "If you need specific documents, please mention them in your first enquiry so we can confirm what can be provided.",
       "We recommend requesting a sample before placing an order.",
     ],
-    draftT: "Quality-control procedures",
-    draft: "[To be confirmed by Tropivara: sorting, sampling, cupping, moisture measurement, storage and pre-shipment checks. These will be described here once verified.]",
   },
   contact: {
     eyebrow: "Contact", title: "Start a supply conversation.",
@@ -156,7 +152,6 @@ const id: Dict = {
   nav: { home: "Beranda", about: "Tentang", products: "Produk", origins: "Asal Kopi", quality: "Proses & QC", contact: "Kontak", inquire: "Kirim Pertanyaan", menu: "Menu", close: "Tutup", language: "Bahasa" },
   common: {
     explore: "Lihat Produk Kami", contactTeam: "Hubungi Tim Kami", viewDetails: "Lihat detail", inquire: "Tanyakan produk ini",
-    draft: "Draf — untuk ditinjau", draftNote: "Bagian ini adalah konten draf yang menunggu persetujuan bisnis sebelum dipublikasikan.",
     catalogSource: "Sumber: Company Profile & Katalog Produk Tropivara (EN v7)", whatsapp: "Chat via WhatsApp", whatsappSoon: "Nomor WhatsApp segera tersedia",
     email: "Kirim email", back: "Kembali ke katalog", allProducts: "Semua produk", products: "produk",
     imageNote: "Gambar ilustrasi — bukan kebun atau fasilitas milik Tropivara.",
@@ -220,7 +215,6 @@ const id: Dict = {
     ],
     priceTermsT: "Ketentuan harga",
     priceTerms: "Penawaran harga dapat diberikan dengan ketentuan EXW, FOB, CNF, atau CIF, tergantung rute pengiriman, logistik, dan kontrak yang disepakati antara pembeli dan penjual. Harga, waktu pengiriman, dan ketentuan pembayaran dicantumkan dalam setiap penawaran dan tidak tercantum di katalog.",
-    historyT: "Sejarah perusahaan", history: "[Akan dilengkapi oleh Tropivara: tahun berdiri, tim, lokasi operasional, dan detail perusahaan lain yang telah diverifikasi.]",
   },
   products: {
     eyebrow: "Katalog produk", title: "Katalog kopi hijau",
@@ -259,8 +253,6 @@ const id: Dict = {
       "Jika Anda memerlukan dokumen tertentu, sebutkan dalam permintaan pertama agar kami dapat mengonfirmasi apa yang dapat disediakan.",
       "Kami menyarankan meminta sampel sebelum melakukan pemesanan.",
     ],
-    draftT: "Prosedur kontrol kualitas",
-    draft: "[Akan dikonfirmasi oleh Tropivara: sortasi, pengambilan sampel, cupping, pengukuran kadar air, penyimpanan, dan pemeriksaan sebelum pengiriman. Akan dijelaskan di sini setelah diverifikasi.]",
   },
   contact: {
     eyebrow: "Kontak", title: "Mulai percakapan pasokan.",
