@@ -25,7 +25,7 @@ function About() {
     <>
       <PageHeader eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
       <section className="container-page grid gap-12 py-20 md:grid-cols-2">
-        <img src={cherries.url} alt="Hand holding harvested coffee cherries — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+        <img src={cherries.url} alt="Hand holding harvested coffee cherries" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
         <div className="space-y-5">
           {a.paragraphs.map((p) => <p key={p.slice(0, 24)} className="text-muted-foreground">{p}</p>)}
         </div>
@@ -57,6 +57,19 @@ function About() {
         <p className="mt-3 text-xs text-muted-foreground">{a.servicesNote}</p>
         <div className="mt-16 max-w-3xl">
           <h2 className="text-3xl text-forest-deep">{a.priceTermsT}</h2><p className="mt-4 text-lg text-muted-foreground">{a.priceTerms}</p>
+        </div>
+      </section>
+      <section className="border-t border-border">
+        <div className="container-page py-20">
+          <h2 className="text-3xl text-forest-deep">{a.howWeWorkT}</h2>
+          <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {a.howWeWork.map((step, i) => (
+              <li key={step} className="border-t border-border pt-5">
+                <span aria-hidden="true" className="font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
+                <p className="mt-4 text-muted-foreground">{step}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
       <InquiryCta />
