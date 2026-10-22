@@ -38,7 +38,6 @@ function Quality() {
             <dl className="mt-8 divide-y divide-border border-y border-border">
               {q.methods.map((m) => <div key={m.t} className="py-4"><dt className="font-display text-xl text-forest-deep">{m.t}</dt><dd className="mt-1 text-muted-foreground">{m.d}</dd></div>)}
             </dl>
-            <p className="mt-3 text-xs text-muted-foreground">{q.methodsNote}</p>
           </div>
         </div>
       </section>
