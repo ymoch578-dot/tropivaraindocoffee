@@ -1,9 +1,10 @@
 # Roadmap
 
 - [x] Place the supplied official logo and derive its favicon.
-- [x] Replace synthetic coffee imagery with natural, real photographs and preserve illustrative disclaimers.
+- [x] Replace synthetic coffee imagery with natural, real photographs and retain attribution privately alongside the assets.
 - [x] Verify logo and photos on all seven pages, including a small-screen check.
 - [x] Align all content with the uploaded Company Profile & Catalogue (EN v7): 15 products, 8 origins.
 - [x] Remove "Draft — for review" sections (company history, QC procedures) and the DraftBadge component.
 - [x] Use the catalogue PDF's own green-coffee photos as product images (TV-01 … TV-15).
+- [x] Add the PDF's four-step How We Work summary, add Home navigation, and remove public photo-source captions while retaining private attribution.
 - [ ] Activate WhatsApp buttons — waiting for the official WhatsApp number from the user.

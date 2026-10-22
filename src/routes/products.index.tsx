@@ -50,7 +50,7 @@ function Catalog() {
             </div>
           );
         })}
-        <p className="mt-12 text-xs text-muted-foreground">{t.common.catalogSource} · {products.filter((p) => filter === "all" || getOrigin(p.originId).species === filter).length} {t.common.products} · {t.common.volumeNote}</p>
+        <p className="mt-12 text-xs text-muted-foreground">{products.filter((p) => filter === "all" || getOrigin(p.originId).species === filter).length} {t.common.products} · {t.common.volumeNote}</p>
       </section>
     </>
   );

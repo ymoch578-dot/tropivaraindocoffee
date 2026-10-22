@@ -30,8 +30,7 @@ function Origins() {
           return (
             <section key={o.id} id={o.id} className={`grid scroll-mt-24 items-center gap-10 border-b border-border py-14 md:grid-cols-2 ${i % 2 ? "md:[&>figure]:order-2" : ""}`}>
               <figure>
-                <img src={harvest.url} alt="Coffee harvest — reference photograph, not this origin" loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full object-cover" />
-                <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
+                <img src={harvest.url} alt="Harvested coffee cherries" loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full object-cover" />
               </figure>
               <div>
                 <p className="eyebrow">0{i + 1} · {t.species[o.species]}</p>
@@ -52,7 +51,6 @@ function Origins() {
             </section>
           );
         })}
-        <p className="mt-6 text-xs text-muted-foreground">{t.common.catalogSource}</p>
       </div>
       <InquiryCta />
     </>

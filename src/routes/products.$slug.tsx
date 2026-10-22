@@ -71,7 +71,7 @@ function Detail() {
               <div key={k} className="grid grid-cols-[9rem_1fr] gap-4 py-3 text-sm sm:grid-cols-[11rem_1fr]"><dt className="text-muted-foreground">{k}</dt><dd className="font-medium">{v}</dd></div>
             ))}
           </dl>
-          <p className="mt-3 text-xs text-muted-foreground">{t.common.catalogSource} · {t.common.volumeNote}</p>
+          <p className="mt-3 text-xs text-muted-foreground">{t.common.volumeNote}</p>
           <div className="mt-10 bg-forest-deep p-7 text-forest-foreground">
             <h2 className="text-2xl">{t.detail.inquiryT}</h2>
             <p className="mt-2 text-sm text-forest-foreground/80">{t.detail.inquiryB}</p>

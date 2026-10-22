@@ -4,9 +4,8 @@ const en = {
   nav: { home: "Home", about: "About", products: "Products", origins: "Origins", quality: "Processing & QC", contact: "Contact", inquire: "Send Inquiry", menu: "Menu", close: "Close", language: "Language" },
   common: {
     explore: "Explore Our Products", contactTeam: "Contact Our Team", viewDetails: "View details", inquire: "Inquire about this product",
-    catalogSource: "Source: Tropivara Company Profile & Product Catalogue (EN v7)", whatsapp: "Chat on WhatsApp", whatsappSoon: "WhatsApp number coming soon",
+    whatsapp: "Chat on WhatsApp", whatsappSoon: "WhatsApp number coming soon",
     email: "Email us", back: "Back to catalog", allProducts: "All products", products: "products",
-    imageNote: "Illustrative imagery — not Tropivara's own farms or facilities.",
     volumeNote: "Volumes are estimates and subject to availability. Specifications may vary by lot.",
   },
   spec: { ref: "Catalogue ref.", origin: "Origin", species: "Species", altitude: "Altitude", process: "Process", flavor: "Cup profile", grade: "Grade", screen: "Screen size", moisture: "Moisture", defects: "Defects", volume: "Estimated volume", variety: "Variety", acidity: "Acidity" },
@@ -57,6 +56,13 @@ const en = {
       { t: "Flexibility", d: "Applying an adaptive approach to meeting business needs while respecting mutual agreements." },
       { t: "Integrity", d: "Upholding honesty, transparency and consistency in sharing information and fulfilling commitments." },
       { t: "Partnership", d: "Building business relationships based on trust, collaboration and long-term mutual benefit." },
+    ],
+    howWeWorkT: "How We Work",
+    howWeWork: [
+      "You send your requirements: species, origin, grade, volume, packaging and destination.",
+      "We confirm availability and specifications.",
+      "You receive product details, a sample if available, and a quotation.",
+      "Quantity, price terms, packaging and shipping are agreed in writing.",
     ],
     servicesT: "Our services", servicesNote: "All services depend on actual capabilities and are confirmed for each order.",
     services: [
@@ -152,9 +158,8 @@ const id: Dict = {
   nav: { home: "Beranda", about: "Tentang", products: "Produk", origins: "Asal Kopi", quality: "Proses & QC", contact: "Kontak", inquire: "Kirim Pertanyaan", menu: "Menu", close: "Tutup", language: "Bahasa" },
   common: {
     explore: "Lihat Produk Kami", contactTeam: "Hubungi Tim Kami", viewDetails: "Lihat detail", inquire: "Tanyakan produk ini",
-    catalogSource: "Sumber: Company Profile & Katalog Produk Tropivara (EN v7)", whatsapp: "Chat via WhatsApp", whatsappSoon: "Nomor WhatsApp segera tersedia",
+    whatsapp: "Chat via WhatsApp", whatsappSoon: "Nomor WhatsApp segera tersedia",
     email: "Kirim email", back: "Kembali ke katalog", allProducts: "Semua produk", products: "produk",
-    imageNote: "Gambar ilustrasi — bukan kebun atau fasilitas milik Tropivara.",
     volumeNote: "Volume bersifat perkiraan dan tergantung ketersediaan. Spesifikasi dapat sedikit berbeda antar-lot.",
   },
   spec: { ref: "Ref. katalog", origin: "Asal", species: "Spesies", altitude: "Ketinggian", process: "Proses", flavor: "Profil cangkir", grade: "Grade", screen: "Ukuran screen", moisture: "Kadar air", defects: "Defect", volume: "Perkiraan volume", variety: "Varietas", acidity: "Keasaman" },
@@ -205,6 +210,13 @@ const id: Dict = {
       { t: "Fleksibilitas", d: "Menerapkan pendekatan adaptif dalam memenuhi kebutuhan bisnis dengan tetap menghormati kesepakatan bersama." },
       { t: "Integritas", d: "Menjunjung kejujuran, transparansi, dan konsistensi dalam menyampaikan informasi dan memenuhi komitmen." },
       { t: "Kemitraan", d: "Membangun hubungan bisnis berdasarkan kepercayaan, kolaborasi, dan manfaat bersama jangka panjang." },
+    ],
+    howWeWorkT: "Cara Kami Bekerja",
+    howWeWork: [
+      "Anda mengirimkan kebutuhan: spesies, daerah asal, grade, volume, kemasan, dan tujuan.",
+      "Kami mengonfirmasi ketersediaan dan spesifikasi.",
+      "Anda menerima detail produk, sampel jika tersedia, dan penawaran harga.",
+      "Jumlah, ketentuan harga, kemasan, dan pengiriman disepakati secara tertulis.",
     ],
     servicesT: "Layanan kami", servicesNote: "Semua layanan bergantung pada kapabilitas aktual dan dikonfirmasi untuk setiap pesanan.",
     services: [
