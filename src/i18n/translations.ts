@@ -103,7 +103,6 @@ const en = {
       { t: "Fully washed", d: "Fruit is removed and the bean is washed clean before drying." },
       { t: "Semi-washed", d: "Fruit is removed and the bean is dried with partial washing." },
     ],
-    methodsNote: "General explanations of each method, provided for buyer reference.",
     infoT: "Product information",
     info: [
       "Each product page lists process, grade, screen size, moisture, defects and cup profile where available.",
@@ -257,7 +256,6 @@ const id: Dict = {
       { t: "Fully washed", d: "Daging buah dihilangkan dan biji dicuci bersih sebelum dikeringkan." },
       { t: "Semi-washed", d: "Daging buah dihilangkan dan biji dikeringkan dengan pencucian sebagian." },
     ],
-    methodsNote: "Penjelasan umum setiap metode, sebagai referensi bagi pembeli.",
     infoT: "Informasi produk",
     info: [
       "Setiap halaman produk mencantumkan proses, grade, ukuran screen, kadar air, defect, dan profil cangkir bila tersedia.",
