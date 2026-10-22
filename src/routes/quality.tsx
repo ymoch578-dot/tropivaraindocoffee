@@ -29,11 +29,10 @@ function Quality() {
         <div className="mt-8 grid gap-px bg-border sm:grid-cols-2">
           {q.confirmed.map((c) => <div key={c.t} className="bg-background p-7"><h3 className="text-xl text-forest-deep">{c.t}</h3><p className="mt-2 text-muted-foreground">{c.d}</p></div>)}
         </div>
-        <p className="mt-3 text-xs text-muted-foreground">{t.common.catalogSource}</p>
       </section>
       <section className="border-y border-border bg-secondary/50">
         <div className="container-page grid gap-12 py-20 md:grid-cols-[1fr_1.2fr]">
-          <img src={beds.url} alt="Coffee cherries drying after harvest — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+          <img src={beds.url} alt="Coffee cherries drying after harvest" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
           <div>
             <h2 className="text-3xl text-forest-deep">{q.methodsT}</h2>
             <dl className="mt-8 divide-y divide-border border-y border-border">

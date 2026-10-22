@@ -46,7 +46,6 @@ function Home() {
           </div>
           <figure className="relative">
             <img src={hero.url} alt="Close-up of real unroasted coffee beans" width={1600} height={1072} className="aspect-[4/5] w-full object-cover lg:aspect-[4/5]" />
-            <figcaption className="mt-2 text-xs text-muted-foreground">{t.common.imageNote}</figcaption>
           </figure>
         </div>
       </section>
@@ -95,7 +94,7 @@ function Home() {
       </section>
 
       <section className="container-page grid items-center gap-12 py-20 md:grid-cols-2">
-        <img src={beds.url} alt="Coffee harvest with cherries drying — reference photograph" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
+        <img src={beds.url} alt="Coffee harvest with cherries drying" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
         <div>
           <p className="eyebrow">{h.qcEyebrow}</p>
           <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.qcTitle}</h2>
@@ -117,7 +116,6 @@ function Home() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">{t.common.catalogSource}</p>
         </div>
       </section>
 

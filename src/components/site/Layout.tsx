@@ -33,8 +33,8 @@ function LangSwitch() {
   );
 }
 
-const navItems = ["about", "products", "origins", "quality", "contact"] as const;
-const paths = { about: "/about", products: "/products", origins: "/origins", quality: "/quality", contact: "/contact" } as const;
+const navItems = ["home", "about", "products", "origins", "quality", "contact"] as const;
+const paths = { home: "/", about: "/about", products: "/products", origins: "/origins", quality: "/quality", contact: "/contact" } as const;
 
 export function Header() {
   const { t } = useI18n();
@@ -45,7 +45,7 @@ export function Header() {
         <Link to="/" aria-label="Tropivara — home" onClick={() => setOpen(false)}><Logo /></Link>
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navItems.map((k) => (
-            <Link key={k} to={paths[k]} className="text-sm text-foreground/80 hover:text-forest" activeProps={{ className: "text-forest font-semibold" }}>
+            <Link key={k} to={paths[k]} activeOptions={{ exact: k === "home" }} className="text-sm text-foreground/80 hover:text-forest" activeProps={{ className: "text-forest font-semibold" }}>
               {t.nav[k]}
             </Link>
           ))}
@@ -61,8 +61,8 @@ export function Header() {
       {open && (
         <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border lg:hidden">
           <div className="container-page flex flex-col py-3">
-            {(["home", ...navItems] as const).map((k) => (
-              <Link key={k} to={k === "home" ? "/" : paths[k]} onClick={() => setOpen(false)} className="py-3 font-display text-xl border-b border-border/60 last:border-0">
+            {navItems.map((k) => (
+              <Link key={k} to={paths[k]} onClick={() => setOpen(false)} className="py-3 font-display text-xl border-b border-border/60 last:border-0">
                 {t.nav[k]}
               </Link>
             ))}
@@ -87,8 +87,8 @@ export function Footer() {
         <div>
           <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.pages}</h2>
           <ul className="space-y-2 text-sm">
-            {(["home", ...navItems] as const).map((k) => (
-              <li key={k}><Link to={k === "home" ? "/" : paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
+            {navItems.map((k) => (
+              <li key={k}><Link to={paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
             ))}
           </ul>
         </div>
