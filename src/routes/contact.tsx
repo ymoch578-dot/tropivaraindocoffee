@@ -4,7 +4,7 @@ import { CheckCircle2, Globe, Mail, MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { PageHeader } from "@/components/site/Layout";
 import { getProduct, productLabel, products } from "@/data/products";
-import { BUSINESS_EMAIL, WEBSITE_URL, mailtoLink, whatsappLink } from "@/config/contact";
+import { BUSINESS_EMAIL, SECONDARY_EMAIL, SOCIALS, WHATSAPP_DISPLAY, WEBSITE_URL, mailtoLink, whatsappLink } from "@/config/contact";
 import { validateInquiry, type InquiryErrors, type InquiryInput } from "@/lib/inquiry";
 
 export const Route = createFileRoute("/contact")({
@@ -74,18 +74,32 @@ function Contact() {
             <ol className="mt-5 space-y-4">
               {c.steps.map((s, i) => <li key={s} className="grid grid-cols-[2rem_1fr] gap-3 text-muted-foreground"><span className="font-display text-coffee">0{i + 1}</span>{s}</li>)}
             </ol>
+            <p className="mt-4 text-sm text-muted-foreground">{c.stepsNote}</p>
+          </div>
+          <div className="border-t border-border pt-8">
+            <h2 className="text-2xl text-forest-deep">{c.includeT}</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">{c.include.map((x) => <li key={x}>{x}</li>)}</ul>
+            <p className="mt-4 text-sm text-muted-foreground">{c.includeNote}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{c.availability}</p>
           </div>
           <div className="border-t border-border pt-8">
             <h2 className="eyebrow">{c.direct}</h2>
             <div className="mt-4 flex flex-col gap-3">
               <a href={`mailto:${BUSINESS_EMAIL}`} className="btn btn-outline justify-start text-forest"><Mail className="h-4 w-4" /> <span className="break-all">{BUSINESS_EMAIL}</span></a>
+              <a href={`mailto:${SECONDARY_EMAIL}`} className="btn btn-outline justify-start text-forest"><Mail className="h-4 w-4" /> <span className="break-all">{SECONDARY_EMAIL}</span></a>
               <a href={WEBSITE_URL} target="_blank" rel="noreferrer" className="btn btn-outline justify-start text-forest"><Globe className="h-4 w-4" /> {c.website}: {WEBSITE_URL.replace("https://", "")}</a>
               {whatsappLink("Hello Tropivara") ? (
-                <a href={whatsappLink(`${c.greeting}`)!} target="_blank" rel="noreferrer" className="btn btn-outline justify-start text-forest"><MessageCircle className="h-4 w-4" /> {t.common.whatsapp}</a>
+                <a href={whatsappLink(`${c.greeting}`)!} target="_blank" rel="noreferrer" className="btn btn-outline justify-start text-forest"><MessageCircle className="h-4 w-4" /> WhatsApp {WHATSAPP_DISPLAY}</a>
               ) : (
                 <span aria-disabled="true" className="btn btn-outline justify-start text-muted-foreground"><MessageCircle className="h-4 w-4" /> {t.common.whatsappSoon}</span>
               )}
             </div>
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              <li>Instagram: <a href={SOCIALS.instagram.url} target="_blank" rel="noreferrer" className="text-forest underline">{SOCIALS.instagram.label}</a></li>
+              <li>Facebook: <a href={SOCIALS.facebook.url} target="_blank" rel="noreferrer" className="text-forest underline">{SOCIALS.facebook.label}</a></li>
+              <li>LinkedIn: <a href={SOCIALS.linkedin.url} target="_blank" rel="noreferrer" className="text-forest underline">{SOCIALS.linkedin.label}</a></li>
+              <li>{c.address}</li>
+            </ul>
           </div>
         </aside>
 

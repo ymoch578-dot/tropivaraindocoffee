@@ -16,7 +16,7 @@ describe("inquiry rules", () => {
     expect(validateInquiry(ok)).toEqual({});
   });
   it("uses the business email", () => {
-    expect(BUSINESS_EMAIL).toBe("salestropivaraindo@gmail.com");
+    expect(BUSINESS_EMAIL).toBe("salestropivaraindonesia@gmail.com");
   });
   it("has no WhatsApp link until a number is configured", () => {
     expect(whatsappLink("hi")).toBeNull();
