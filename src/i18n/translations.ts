@@ -61,8 +61,8 @@ const en = {
     howWeWork: [
       "You send your requirements: species, origin, grade, volume, packaging and destination.",
       "We confirm availability and specifications.",
-      "You receive product details, a sample if available, and a quotation.",
-      "Quantity, price terms, packaging and shipping are agreed in writing.",
+      "You receive product details and a quotation. Samples can be arranged upon request, or you may proceed directly with a trial order.",
+      "Quantity, pricing, packaging, payment terms and shipping arrangements are agreed upon in writing before shipment.",
     ],
     servicesT: "Our services", servicesNote: "All services depend on actual capabilities and are confirmed for each order.",
     services: [
@@ -87,21 +87,32 @@ const en = {
   },
   quality: {
     eyebrow: "Processing & quality control", title: "Processing and quality, documented.",
-    lead: "What our catalogue confirms about each product, and how we are preparing to describe our quality procedures.",
-    confirmedT: "Confirmed in the catalogue",
+    lead: "How each product is processed, graded and checked before it is offered to buyers.",
+    confirmedT: "What we document for every product",
     confirmed: [
       { t: "Processing methods", d: "Products are offered as natural, pulp honey natural, anaerobic natural, fully washed and semi-washed, as listed per product." },
       { t: "Drying", d: "Gayo natural lots are described as dried in the sun on raised beds." },
       { t: "Picking", d: "The Excelsa Hand-Picked Red Cherry lot is described as using hand-picked ripe cherries." },
       { t: "Grading data", d: "Grade, screen size, moisture and defect points are listed for each product where available." },
     ],
-    methodsT: "Processing methods in our catalogue",
+    methodsT: "Processing methods we offer",
     methods: [
       { t: "Natural", d: "Whole cherries are dried before the bean is removed." },
       { t: "Pulp honey natural", d: "Skin is removed and the bean is dried with some fruit mucilage remaining." },
       { t: "Anaerobic natural", d: "Cherries undergo fermentation in a low-oxygen environment before drying." },
       { t: "Fully washed", d: "Fruit is removed and the bean is washed clean before drying." },
       { t: "Semi-washed", d: "Fruit is removed and the bean is dried with partial washing." },
+    ],
+    qcT: "Our quality control process",
+    qcLead: "Every lot goes through the same checks before it is offered, so the specification you receive matches the coffee you buy.",
+    qc: [
+      { t: "Lot selection with local partners", d: "We work with local partners in each producing region to select lots that match the species, origin and process requested." },
+      { t: "Processing and drying check", d: "We confirm the processing method of each lot — natural, pulp honey, anaerobic, fully washed or semi-washed — and that drying is complete." },
+      { t: "Moisture measurement", d: "Moisture content is checked against the specification for each product before the lot is offered." },
+      { t: "Sorting and screen grading", d: "Beans are sorted by screen size; sorted lots are graded, while unsorted commercial lots are offered with mixed sizes." },
+      { t: "Defect count and grading", d: "Defects are counted and each lot is assigned its grade (Grade 1, Grade 3 or commercial) based on the defect points." },
+      { t: "Cup profile", d: "The cup profile of each product is described so buyers can match the coffee to their needs." },
+      { t: "Specification sheet and sample", d: "Before ordering, buyers receive the current specification sheet and may request a sample or place a trial order." },
     ],
     infoT: "Product information",
     info: [
@@ -119,7 +130,7 @@ const en = {
     steps: [
       "Send your enquiry — species, origin or product reference (for example TV-04), target volume, packaging preference, destination port and any documents you need.",
       "Receive specifications — we confirm the current specification and availability for the products you request.",
-      "Request a sample — sample quantity and conditions are confirmed for each lot.",
+      "Evaluate the product (optional) — request a sample, subject to availability and agreed conditions, or proceed directly with a trial order to assess quality before placing larger orders.",
       "Receive a quotation — on EXW, FOB, CNF or CIF basis, with price, packaging, minimum order quantity and shipment schedule.",
       "Confirm the order — contract and payment terms and logistics are agreed before shipment.",
     ],
@@ -127,7 +138,6 @@ const en = {
     faq: [
       { q: "Which coffees are listed?", a: "Fifteen products: three Excelsa, seven Arabica and five Robusta from eight Indonesian origins. Availability is confirmed for each enquiry." },
       { q: "Can I get a sample?", a: "You can request a sample. Quantity and conditions are confirmed for each lot." },
-      { q: "Are prices shown?", a: "No. Prices are given in each quotation." },
       { q: "Is custom packaging or private label possible?", a: "Both can be discussed, subject to actual capabilities and agreed terms." },
       { q: "Which price terms are possible?", a: "EXW, FOB, CNF or CIF, depending on the route, logistics and the agreed contract." },
       { q: "Can you supply other origins or grades?", a: "Send us your specification and we will check what we can offer." },
@@ -145,7 +155,9 @@ const en = {
     another: "Start a new inquiry", direct: "Direct contact", sendWa: "Send via WhatsApp instead",
     formNote: "This form prepares an email in your own email app — nothing is sent until you confirm there.",
     greeting: "Hello Tropivara team,", subject: "Green coffee inquiry",
-    website: "Website",
+    website: "Website", address: "Kabupaten Gresik, Provinsi Jawa Timur, Indonesia", availability: "Ketersediaan produk bergantung pada panen dan stok, dan dikonfirmasi untuk setiap permintaan.",
+    includeT: "Yang perlu dicantumkan dalam permintaan Anda", include: ["Spesies, daerah asal, atau referensi produk (misalnya TV-04)", "Target volume dan jumlah pengiriman", "Preferensi kemasan dan pelabuhan tujuan", "Dokumen atau spesifikasi yang Anda perlukan"], includeNote: "Kemasan, jumlah pesanan minimum, jadwal pengiriman, dan dokumen dikonfirmasi dalam penawaran harga Anda.", address: "Gresik Regency, East Java Province, Indonesia", availability: "Product availability depends on harvest and stock, and is confirmed for each enquiry.",
+    includeT: "What to include in your enquiry", include: ["Species, origin or product reference (for example TV-04)", "Target volume and number of shipments", "Packaging preference and destination port", "Any documents or specifications you require"], includeNote: "Packaging, minimum order quantity, shipment schedule and documents are confirmed in your quotation.",
   },
   footer: { tagline: "Indonesian green coffee supply and export — Arabica, Robusta and Excelsa for international buyers.", pages: "Pages", contact: "Contact", rights: "All rights reserved." },
   notFound: { title: "Page not found", body: "The page you're looking for doesn't exist or has moved.", home: "Back to home" },
@@ -214,8 +226,8 @@ const id: Dict = {
     howWeWork: [
       "Anda mengirimkan kebutuhan: spesies, daerah asal, grade, volume, kemasan, dan tujuan.",
       "Kami mengonfirmasi ketersediaan dan spesifikasi.",
-      "Anda menerima detail produk, sampel jika tersedia, dan penawaran harga.",
-      "Jumlah, ketentuan harga, kemasan, dan pengiriman disepakati secara tertulis.",
+      "Anda menerima detail produk dan penawaran harga. Sampel dapat disiapkan atas permintaan, atau Anda dapat langsung melakukan trial order.",
+      "Jumlah, harga, kemasan, ketentuan pembayaran, dan pengaturan pengiriman disepakati secara tertulis sebelum pengiriman.",
     ],
     servicesT: "Layanan kami", servicesNote: "Semua layanan bergantung pada kapabilitas aktual dan dikonfirmasi untuk setiap pesanan.",
     services: [
@@ -240,21 +252,32 @@ const id: Dict = {
   },
   quality: {
     eyebrow: "Proses & kontrol kualitas", title: "Proses dan kualitas, terdokumentasi.",
-    lead: "Apa yang dikonfirmasi katalog kami tentang setiap produk, dan bagaimana kami menyiapkan penjelasan prosedur kualitas.",
-    confirmedT: "Dikonfirmasi dalam katalog",
+    lead: "Bagaimana setiap produk diproses, di-grading, dan diperiksa sebelum ditawarkan kepada pembeli.",
+    confirmedT: "Yang kami dokumentasikan untuk setiap produk",
     confirmed: [
       { t: "Metode proses", d: "Produk ditawarkan sebagai natural, pulp honey natural, natural anaerob, fully washed, dan semi-washed, sesuai keterangan per produk." },
       { t: "Pengeringan", d: "Lot natural Gayo disebutkan dijemur matahari di para-para." },
       { t: "Pemetikan", d: "Lot Excelsa Hand-Picked Red Cherry disebutkan menggunakan ceri matang yang dipetik tangan." },
       { t: "Data grading", d: "Grade, ukuran screen, kadar air, dan poin defect dicantumkan untuk setiap produk bila tersedia." },
     ],
-    methodsT: "Metode proses dalam katalog kami",
+    methodsT: "Metode proses yang kami tawarkan",
     methods: [
       { t: "Natural", d: "Ceri utuh dikeringkan sebelum biji dikeluarkan." },
       { t: "Pulp honey natural", d: "Kulit dikupas dan biji dikeringkan dengan sebagian lendir buah masih menempel." },
       { t: "Natural anaerob", d: "Ceri difermentasi dalam lingkungan rendah oksigen sebelum dikeringkan." },
       { t: "Fully washed", d: "Daging buah dihilangkan dan biji dicuci bersih sebelum dikeringkan." },
       { t: "Semi-washed", d: "Daging buah dihilangkan dan biji dikeringkan dengan pencucian sebagian." },
+    ],
+    qcT: "Proses kontrol kualitas kami",
+    qcLead: "Setiap lot melalui pemeriksaan yang sama sebelum ditawarkan, sehingga spesifikasi yang Anda terima sesuai dengan kopi yang Anda beli.",
+    qc: [
+      { t: "Seleksi lot bersama mitra lokal", d: "Kami bekerja sama dengan mitra lokal di setiap daerah penghasil untuk memilih lot yang sesuai dengan spesies, daerah asal, dan proses yang diminta." },
+      { t: "Pemeriksaan proses dan pengeringan", d: "Kami memastikan metode proses setiap lot — natural, pulp honey, anaerob, fully washed, atau semi-washed — serta pengeringannya telah tuntas." },
+      { t: "Pengukuran kadar air", d: "Kadar air diperiksa sesuai spesifikasi setiap produk sebelum lot ditawarkan." },
+      { t: "Sortasi dan grading screen", d: "Biji disortir berdasarkan ukuran screen; lot tersortir diberi grade, sedangkan lot komersial tanpa sortasi ditawarkan dengan ukuran campuran." },
+      { t: "Penghitungan defect dan grading", d: "Defect dihitung dan setiap lot diberi grade (Grade 1, Grade 3, atau komersial) berdasarkan poin defect." },
+      { t: "Profil cangkir", d: "Profil cangkir setiap produk dideskripsikan agar pembeli dapat mencocokkan kopi dengan kebutuhannya." },
+      { t: "Lembar spesifikasi dan sampel", d: "Sebelum memesan, pembeli menerima lembar spesifikasi terkini dan dapat meminta sampel atau melakukan trial order." },
     ],
     infoT: "Informasi produk",
     info: [
@@ -272,7 +295,7 @@ const id: Dict = {
     steps: [
       "Kirim permintaan Anda — spesies, daerah asal atau referensi produk (misalnya TV-04), target volume, preferensi kemasan, pelabuhan tujuan, dan dokumen yang Anda perlukan.",
       "Terima spesifikasi — kami mengonfirmasi spesifikasi terkini dan ketersediaan produk yang Anda minta.",
-      "Minta sampel — jumlah dan ketentuan sampel dikonfirmasi untuk setiap lot.",
+      "Evaluasi produk (opsional) — minta sampel sesuai ketersediaan dan ketentuan yang disepakati, atau langsung lakukan trial order untuk menilai kualitas sebelum pesanan lebih besar.",
       "Terima penawaran — berbasis EXW, FOB, CNF, atau CIF, dengan harga, kemasan, jumlah pesanan minimum, dan jadwal pengiriman.",
       "Konfirmasi pesanan — kontrak, ketentuan pembayaran, dan logistik disepakati sebelum pengiriman.",
     ],
@@ -280,7 +303,6 @@ const id: Dict = {
     faq: [
       { q: "Kopi apa saja yang tersedia?", a: "Lima belas produk: tiga Excelsa, tujuh Arabika, dan lima Robusta dari delapan daerah asal Indonesia. Ketersediaan dikonfirmasi untuk setiap permintaan." },
       { q: "Bisakah saya mendapatkan sampel?", a: "Anda dapat meminta sampel. Jumlah dan ketentuannya dikonfirmasi untuk setiap lot." },
-      { q: "Apakah harga ditampilkan?", a: "Tidak. Harga diberikan dalam setiap penawaran." },
       { q: "Apakah kemasan kustom atau private label memungkinkan?", a: "Keduanya dapat didiskusikan, tergantung kapabilitas aktual dan ketentuan yang disepakati." },
       { q: "Ketentuan harga apa saja yang memungkinkan?", a: "EXW, FOB, CNF, atau CIF, tergantung rute, logistik, dan kontrak yang disepakati." },
       { q: "Bisakah memasok daerah asal atau grade lain?", a: "Kirimkan spesifikasi Anda dan kami akan memeriksa apa yang dapat kami tawarkan." },
