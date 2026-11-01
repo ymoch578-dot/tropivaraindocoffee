@@ -8,7 +8,7 @@ export const Route = createFileRoute("/quality")({
   head: () => ({
     meta: [
       { title: "Processing & Quality Control — Tropivara" },
-      { name: "description", content: "Processing methods and grading data for Tropivara green coffee lots, as documented in our catalog." },
+      { name: "description", content: "Processing methods and grading data for Tropivara green coffee lots, with our step-by-step quality control process." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Processing & Quality — Tropivara" },
@@ -39,6 +39,25 @@ function Quality() {
               {q.methods.map((m) => <div key={m.t} className="py-4"><dt className="font-display text-xl text-forest-deep">{m.t}</dt><dd className="mt-1 text-muted-foreground">{m.d}</dd></div>)}
             </dl>
           </div>
+        </div>
+      </section>
+      <section className="container-page py-20">
+        <h2 className="text-3xl text-forest-deep">{q.qcT}</h2>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{q.qcLead}</p>
+        <ol className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {q.qc.map((step, i) => (
+            <li key={step.t} className="bg-background p-7">
+              <span aria-hidden="true" className="font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-4 text-xl text-forest-deep">{step.t}</h3>
+              <p className="mt-2 text-muted-foreground">{step.d}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+      <section className="border-t border-border">
+        <div className="container-page py-20 max-w-3xl">
+          <h2 className="text-3xl text-forest-deep">{q.infoT}</h2>
+          <ul className="mt-6 list-disc space-y-3 pl-5 text-muted-foreground">{q.info.map((i) => <li key={i}>{i}</li>)}</ul>
         </div>
       </section>
       <InquiryCta />

@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
-import { BUSINESS_EMAIL, hasWhatsApp, whatsappLink } from "@/config/contact";
+import { BUSINESS_EMAIL, SECONDARY_EMAIL, WHATSAPP_DISPLAY, hasWhatsApp, whatsappLink } from "@/config/contact";
 import type { Lang } from "@/i18n/translations";
 import logo from "@/assets/tropivara-logo-clean.png.asset.json";
 import logoLight from "@/assets/tropivara-logo-light-clean.png.asset.json";
@@ -96,8 +96,9 @@ export function Footer() {
           <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.contact}</h2>
           <ul className="space-y-2 text-sm">
             <li><a href={`mailto:${BUSINESS_EMAIL}`} className="hover:underline break-all">{BUSINESS_EMAIL}</a></li>
-            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp</a> : <span className="text-forest-foreground/60">WhatsApp: {t.common.whatsappSoon}</span>}</li>
-            <li className="text-forest-foreground/60">Indonesia</li>
+            <li><a href={`mailto:${SECONDARY_EMAIL}`} className="hover:underline break-all">{SECONDARY_EMAIL}</a></li>
+            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp {WHATSAPP_DISPLAY}</a> : <span className="text-forest-foreground/60">WhatsApp: {t.common.whatsappSoon}</span>}</li>
+            <li className="text-forest-foreground/60">{t.contact.address}</li>
           </ul>
         </div>
       </div>
