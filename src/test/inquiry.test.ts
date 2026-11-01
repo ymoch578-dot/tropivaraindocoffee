@@ -18,8 +18,8 @@ describe("inquiry rules", () => {
   it("uses the business email", () => {
     expect(BUSINESS_EMAIL).toBe("salestropivaraindonesia@gmail.com");
   });
-  it("has no WhatsApp link until a number is configured", () => {
-    expect(whatsappLink("hi")).toBeNull();
+  it("WhatsApp links use the official number", () => {
+    expect(whatsappLink("hi")).toBe("https://wa.me/6285196572911?text=hi");
   });
   it("catalog has 15 products across 8 origins with no price field", () => {
     expect(products).toHaveLength(15);
