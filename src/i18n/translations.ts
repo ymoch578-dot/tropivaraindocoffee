@@ -320,7 +320,7 @@ const id: Dict = {
     formNote: "Formulir ini menyiapkan email di aplikasi email Anda — tidak ada yang terkirim sebelum Anda konfirmasi di sana.",
     greeting: "Halo tim Tropivara,", subject: "Pertanyaan kopi hijau",
     website: "Situs web", address: "Kabupaten Gresik, Provinsi Jawa Timur, Indonesia", availability: "Ketersediaan produk bergantung pada panen dan stok, dan dikonfirmasi untuk setiap permintaan.",
-    includeT: "Yang perlu dicantumkan dalam permintaan Anda", include: ["Spesies, daerah asal, atau referensi produk (misalnya TV-04)", "Target volume dan jumlah pengiriman", "Preferensi kemasan dan pelabuhan tujuan", "Dokumen atau spesifikasi yang Anda perlukan"], includeNote: "Kemasan, jumlah pesanan minimum, jadwal pengiriman, dan dokumen dikonfirmasi dalam penawaran harga Anda.", address: "Gresik Regency, East Java Province, Indonesia", availability: "Product availability depends on harvest and stock, and is confirmed for each enquiry.",
+    includeT: "Yang perlu dicantumkan dalam permintaan Anda", include: ["Spesies, daerah asal, atau referensi produk (misalnya TV-04)", "Target volume dan jumlah pengiriman", "Preferensi kemasan dan pelabuhan tujuan", "Dokumen atau spesifikasi yang Anda perlukan"], includeNote: "Kemasan, jumlah pesanan minimum, jadwal pengiriman, dan dokumen dikonfirmasi dalam penawaran harga Anda.",
   },
   footer: { tagline: "Pasokan dan ekspor kopi hijau Indonesia — Arabika, Robusta, dan Excelsa untuk pembeli internasional.", pages: "Halaman", contact: "Kontak", rights: "Hak cipta dilindungi." },
   notFound: { title: "Halaman tidak ditemukan", body: "Halaman yang Anda cari tidak ada atau telah dipindahkan.", home: "Kembali ke beranda" },
