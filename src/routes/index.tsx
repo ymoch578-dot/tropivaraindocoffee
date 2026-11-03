@@ -6,6 +6,7 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { InquiryCta } from "@/components/site/InquiryCta";
 import hero from "@/assets/green-coffee-photo.jpg.asset.json";
 import beds from "@/assets/coffee-harvest-photo.jpg.asset.json";
+import tv01 from "@/assets/tv-01.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,8 +45,9 @@ function Home() {
               ))}
             </dl>
           </div>
-          <figure className="relative">
-            <img src={hero.url} alt="Close-up of real unroasted coffee beans" width={1600} height={1072} className="aspect-[4/5] w-full object-cover lg:aspect-[4/5]" />
+          <figure className="relative pb-16 pl-10 lg:pl-16">
+            <img src={hero.url} alt="Close-up of unroasted coffee beans" width={1600} height={1072} className="aspect-[5/6] w-full object-cover" />
+            <img src={tv01.url} alt="Tropivara Excelsa green beans" width={606} height={800} className="absolute bottom-0 left-0 w-2/5 border-8 border-background object-cover shadow-sm" />
           </figure>
         </div>
       </section>
@@ -107,15 +109,14 @@ function Home() {
         <div className="container-page py-20">
           <p className="eyebrow">{h.whyEyebrow}</p>
           <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.whyTitle}</h2>
-          <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {h.why.map((c, i) => (
-              <div key={c.t} className="bg-background p-7">
-                <span className="font-display text-coffee">0{i + 1}</span>
-                <h3 className="mt-3 text-2xl text-forest-deep">{c.t}</h3>
-                <p className="mt-2 text-muted-foreground">{c.d}</p>
+          <dl className="mt-10 grid gap-x-16 gap-y-10 md:grid-cols-2">
+            {h.why.map((c) => (
+              <div key={c.t} className="border-l-2 border-coffee/40 pl-6">
+                <dt className="text-2xl font-display text-forest-deep">{c.t}</dt>
+                <dd className="mt-2 max-w-md text-muted-foreground">{c.d}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
