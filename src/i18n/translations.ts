@@ -158,7 +158,7 @@ const en = {
     website: "Website", address: "Gresik Regency, East Java Province, Indonesia", availability: "Product availability depends on harvest and stock, and is confirmed for each enquiry.",
     includeT: "What to include in your enquiry", include: ["Species, origin or product reference (for example TV-04)", "Target volume and number of shipments", "Packaging preference and destination port", "Any documents or specifications you require"], includeNote: "Packaging, minimum order quantity, shipment schedule and documents are confirmed in your quotation.",
   },
-  footer: { tagline: "Indonesian green coffee supply and export — Arabica, Robusta and Excelsa for international buyers.", pages: "Pages", contact: "Contact", rights: "All rights reserved." },
+  footer: { tagline: "Tropical Origins, Global Value. Indonesian Agricultural Products. Indonesian green coffee supply and export — Arabica, Robusta and Excelsa for international buyers.", pages: "Pages", contact: "Contact", rights: "All rights reserved." },
   notFound: { title: "Page not found", body: "The page you're looking for doesn't exist or has moved.", home: "Back to home" },
 };
 
@@ -322,7 +322,7 @@ const id: Dict = {
     website: "Situs web", address: "Kabupaten Gresik, Provinsi Jawa Timur, Indonesia", availability: "Ketersediaan produk bergantung pada panen dan stok, dan dikonfirmasi untuk setiap permintaan.",
     includeT: "Yang perlu dicantumkan dalam permintaan Anda", include: ["Spesies, daerah asal, atau referensi produk (misalnya TV-04)", "Target volume dan jumlah pengiriman", "Preferensi kemasan dan pelabuhan tujuan", "Dokumen atau spesifikasi yang Anda perlukan"], includeNote: "Kemasan, jumlah pesanan minimum, jadwal pengiriman, dan dokumen dikonfirmasi dalam penawaran harga Anda.",
   },
-  footer: { tagline: "Pasokan dan ekspor kopi hijau Indonesia — Arabika, Robusta, dan Excelsa untuk pembeli internasional.", pages: "Halaman", contact: "Kontak", rights: "Hak cipta dilindungi." },
+  footer: { tagline: "Tropical Origins, Global Value. Produk Pertanian Indonesia. Pasokan dan ekspor kopi hijau Indonesia — Arabika, Robusta, dan Excelsa untuk pembeli internasional.", pages: "Halaman", contact: "Kontak", rights: "Hak cipta dilindungi." },
   notFound: { title: "Halaman tidak ditemukan", body: "Halaman yang Anda cari tidak ada atau telah dipindahkan.", home: "Kembali ke beranda" },
 };
 
