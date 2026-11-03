@@ -37,8 +37,22 @@
   --color-ivory: var(--ivory);
 }
 
+@theme {
+  --text-xs: 0.9375rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 1.0625rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.4;
+}
+
 :root {
   --radius: 0.25rem;
+
   --ivory: oklch(0.97 0.018 85);
   --background: oklch(0.965 0.02 85);
   --foreground: oklch(0.24 0.03 150);
@@ -72,8 +86,11 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+
   h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; }
   :focus-visible { outline: 2px solid var(--color-ring); outline-offset: 3px; }
 }
@@ -88,7 +105,7 @@
 
 @utility eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0;
   font-style: italic;
   font-family: var(--font-display);
@@ -96,18 +113,20 @@
   color: var(--color-coffee);
 }
 
+
 @utility btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.4rem;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: var(--radius);
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
+
 
 @utility btn-primary {
   background-color: var(--color-forest);
@@ -133,11 +152,12 @@
   background-color: var(--color-card);
   border: 1px solid var(--color-input);
   border-radius: var(--radius);
-  padding: 0.75rem 0.9rem;
-  font-size: 0.95rem;
+  padding: 0.8rem 0.9rem;
+  font-size: 1.05rem;
   &:focus { outline: 2px solid var(--color-ring); outline-offset: 1px; }
   &[aria-invalid="true"] { border-color: var(--color-destructive); }
 }
+
 
 @utility grain {
   background-color: var(--color-secondary);
