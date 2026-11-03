@@ -88,10 +88,11 @@
 
 @utility eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  font-style: italic;
+  font-family: var(--font-display);
+  font-weight: 400;
   color: var(--color-coffee);
 }
 
@@ -139,6 +140,5 @@
 }
 
 @utility grain {
-  background-image: radial-gradient(color-mix(in oklab, var(--color-foreground) 6%, transparent) 1px, transparent 1px);
-  background-size: 4px 4px;
+  background-color: var(--color-secondary);
 }
