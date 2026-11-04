@@ -83,11 +83,11 @@ export function Footer() {
       <div className="container-page grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div className="space-y-4 max-w-sm">
           <Logo light />
-          <p className="text-sm text-forest-foreground/75">{t.footer.tagline}</p>
-          <p className="font-display italic text-forest-foreground/80">"{t.home.quote}"</p>
+          <p className="text-sm text-forest-foreground/85">{t.footer.tagline}</p>
+          <p className="font-display italic text-accent">"{t.home.quote}"</p>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.pages}</h2>
+          <h2 className="eyebrow !text-accent mb-4">{t.footer.pages}</h2>
           <ul className="space-y-2 text-sm">
             {navItems.map((k) => (
               <li key={k}><Link to={paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
@@ -95,7 +95,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.contact}</h2>
+          <h2 className="eyebrow !text-accent mb-4">{t.footer.contact}</h2>
           <ul className="space-y-2 text-sm">
             <li><a href={`mailto:${BUSINESS_EMAIL}`} className="hover:underline break-all">{BUSINESS_EMAIL}</a></li>
             <li><a href={`mailto:${SECONDARY_EMAIL}`} className="hover:underline break-all">{SECONDARY_EMAIL}</a></li>
@@ -105,7 +105,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-forest-foreground/15">
-        <div className="container-page py-5 text-xs text-forest-foreground/80">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
+        <div className="container-page py-5 text-xs text-forest-foreground/90">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
       </div>
     </footer>
   );

@@ -10,7 +10,7 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="group flex flex-col border border-border bg-card">
       <div className="relative aspect-[4/3] overflow-hidden">
         <img src={productImage(product)} alt={`${product.name} — green coffee beans`} loading="lazy" width={606} height={800} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-        <span className="absolute left-3 top-3 bg-background/90 px-2 py-1 text-xs font-semibold tracking-wider">{product.ref}</span>
+        <span className="absolute left-3 top-3 bg-card/95 px-2 py-1 text-xs font-semibold tracking-wider text-coffee">{product.ref}</span>
       </div>
       <div className="flex flex-1 flex-col p-5">
         <p className="eyebrow">{origin.title} · {t.species[origin.species]}</p>
