@@ -65,7 +65,7 @@ function About() {
           <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {a.howWeWork.map((step, i) => (
               <li key={step} className="border-t border-border pt-5">
-                <span aria-hidden="true" className="font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
+                <span aria-hidden="true" className="font-display text-3xl text-forest">{String(i + 1).padStart(2, "0")}</span>
                 <p className="mt-4 text-muted-foreground">{step}</p>
               </li>
             ))}

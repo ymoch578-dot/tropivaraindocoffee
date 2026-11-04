@@ -16,7 +16,7 @@ export function Logo({ light = false }: { light?: boolean }) {
 function LangSwitch() {
   const { lang, setLang, t } = useI18n();
   return (
-    <div role="group" aria-label={t.nav.language} className="flex rounded-sm border border-border text-xs font-semibold">
+    <div role="group" aria-label={t.nav.language} className="flex rounded-sm border border-forest/25 text-xs font-semibold">
       {(["en", "id"] as Lang[]).map((l) => (
         <button
           key={l}
@@ -40,12 +40,13 @@ export function Header() {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur">
+      <div aria-hidden="true" className="h-1.5 w-full bg-forest" />
       <div className="container-page flex h-24 items-center justify-between gap-4">
         <Link to="/" aria-label="Tropivara — home" onClick={() => setOpen(false)}><Logo /></Link>
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navItems.map((k) => (
-            <Link key={k} to={paths[k]} activeOptions={{ exact: k === "home" }} className="text-sm text-foreground/80 hover:text-forest" activeProps={{ className: "text-forest font-semibold" }}>
+            <Link key={k} to={paths[k]} activeOptions={{ exact: k === "home" }} className="text-sm text-forest-deep/80 hover:text-forest" activeProps={{ className: "text-forest font-semibold underline decoration-forest/40 underline-offset-8" }}>
               {t.nav[k]}
             </Link>
           ))}
@@ -78,14 +79,15 @@ export function Footer() {
   const wa = whatsappLink("Hello Tropivara");
   return (
     <footer className="bg-forest-deep text-forest-foreground">
+      <div aria-hidden="true" className="h-1.5 w-full bg-forest" />
       <div className="container-page grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div className="space-y-4 max-w-sm">
           <Logo light />
           <p className="text-sm text-forest-foreground/75">{t.footer.tagline}</p>
-          <p className="font-display italic text-forest-foreground/60">"{t.home.quote}"</p>
+          <p className="font-display italic text-forest-foreground/80">"{t.home.quote}"</p>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.pages}</h2>
+          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.pages}</h2>
           <ul className="space-y-2 text-sm">
             {navItems.map((k) => (
               <li key={k}><Link to={paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
@@ -93,17 +95,17 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.contact}</h2>
+          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.contact}</h2>
           <ul className="space-y-2 text-sm">
             <li><a href={`mailto:${BUSINESS_EMAIL}`} className="hover:underline break-all">{BUSINESS_EMAIL}</a></li>
             <li><a href={`mailto:${SECONDARY_EMAIL}`} className="hover:underline break-all">{SECONDARY_EMAIL}</a></li>
-            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp {WHATSAPP_DISPLAY}</a> : <span className="text-forest-foreground/60">WhatsApp: {t.common.whatsappSoon}</span>}</li>
-            <li className="text-forest-foreground/60">{t.contact.address}</li>
+            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp {WHATSAPP_DISPLAY}</a> : <span className="text-forest-foreground/80">WhatsApp: {t.common.whatsappSoon}</span>}</li>
+            <li className="text-forest-foreground/80">{t.contact.address}</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-forest-foreground/15">
-        <div className="container-page py-5 text-xs text-forest-foreground/60">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
+        <div className="container-page py-5 text-xs text-forest-foreground/80">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
       </div>
     </footer>
   );
