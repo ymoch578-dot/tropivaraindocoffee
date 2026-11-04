@@ -7,4 +7,5 @@
 - [x] Remove "Draft — for review" sections (company history, QC procedures) and the DraftBadge component.
 - [x] Use the catalogue PDF's own green-coffee photos as product images (TV-01 … TV-15).
 - [x] Add the PDF's four-step How We Work summary, add Home navigation, and remove public photo-source captions while retaining private attribution.
-- [ ] Activate WhatsApp buttons — waiting for the official WhatsApp number from the user.
+- [x] Activate WhatsApp buttons — official number +62 851 9657 2911 supplied.
+- [x] Point Instagram, Facebook and LinkedIn links at the official profile URLs.
