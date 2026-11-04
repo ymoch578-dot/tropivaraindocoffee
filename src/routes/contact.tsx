@@ -72,7 +72,7 @@ function Contact() {
           <div>
             <h2 className="text-2xl text-forest-deep">{c.stepsT}</h2>
             <ol className="mt-5 space-y-4">
-              {c.steps.map((s, i) => <li key={s} className="grid grid-cols-[2rem_1fr] gap-3 text-muted-foreground"><span className="font-display text-coffee">0{i + 1}</span>{s}</li>)}
+              {c.steps.map((s, i) => <li key={s} className="grid grid-cols-[2rem_1fr] gap-3 text-muted-foreground"><span className="font-display text-forest">0{i + 1}</span>{s}</li>)}
             </ol>
             <p className="mt-4 text-sm text-muted-foreground">{c.stepsNote}</p>
           </div>

@@ -84,10 +84,10 @@ export function Footer() {
         <div className="space-y-4 max-w-sm">
           <Logo light />
           <p className="text-sm text-forest-foreground/75">{t.footer.tagline}</p>
-          <p className="font-display italic text-forest-foreground/60">"{t.home.quote}"</p>
+          <p className="font-display italic text-forest-foreground/80">"{t.home.quote}"</p>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.pages}</h2>
+          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.pages}</h2>
           <ul className="space-y-2 text-sm">
             {navItems.map((k) => (
               <li key={k}><Link to={paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
@@ -95,17 +95,17 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/60 mb-4">{t.footer.contact}</h2>
+          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.contact}</h2>
           <ul className="space-y-2 text-sm">
             <li><a href={`mailto:${BUSINESS_EMAIL}`} className="hover:underline break-all">{BUSINESS_EMAIL}</a></li>
             <li><a href={`mailto:${SECONDARY_EMAIL}`} className="hover:underline break-all">{SECONDARY_EMAIL}</a></li>
-            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp {WHATSAPP_DISPLAY}</a> : <span className="text-forest-foreground/60">WhatsApp: {t.common.whatsappSoon}</span>}</li>
-            <li className="text-forest-foreground/60">{t.contact.address}</li>
+            <li>{hasWhatsApp() && wa ? <a href={wa} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp {WHATSAPP_DISPLAY}</a> : <span className="text-forest-foreground/80">WhatsApp: {t.common.whatsappSoon}</span>}</li>
+            <li className="text-forest-foreground/80">{t.contact.address}</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-forest-foreground/15">
-        <div className="container-page py-5 text-xs text-forest-foreground/60">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
+        <div className="container-page py-5 text-xs text-forest-foreground/80">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
       </div>
     </footer>
   );

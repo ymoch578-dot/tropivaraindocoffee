@@ -154,6 +154,7 @@
   border-radius: var(--radius);
   padding: 0.8rem 0.9rem;
   font-size: 1.05rem;
+  &::placeholder { color: color-mix(in oklab, var(--color-muted-foreground) 80%, transparent); }
   &:focus { outline: 2px solid var(--color-ring); outline-offset: 1px; }
   &[aria-invalid="true"] { border-color: var(--color-destructive); }
 }
