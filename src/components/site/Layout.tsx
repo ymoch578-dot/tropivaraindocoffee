@@ -87,7 +87,7 @@ export function Footer() {
           <p className="font-display italic text-accent">"{t.home.quote}"</p>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.pages}</h2>
+          <h2 className="eyebrow !text-accent mb-4">{t.footer.pages}</h2>
           <ul className="space-y-2 text-sm">
             {navItems.map((k) => (
               <li key={k}><Link to={paths[k]} className="hover:underline">{t.nav[k]}</Link></li>
@@ -95,7 +95,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.contact}</h2>
+          <h2 className="eyebrow !text-accent mb-4">{t.footer.contact}</h2>
           <ul className="space-y-2 text-sm">
             <li><a href={`mailto:${BUSINESS_EMAIL}`} className="hover:underline break-all">{BUSINESS_EMAIL}</a></li>
             <li><a href={`mailto:${SECONDARY_EMAIL}`} className="hover:underline break-all">{SECONDARY_EMAIL}</a></li>
