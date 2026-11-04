@@ -84,7 +84,7 @@ export function Footer() {
         <div className="space-y-4 max-w-sm">
           <Logo light />
           <p className="text-sm text-forest-foreground/75">{t.footer.tagline}</p>
-          <p className="font-display italic text-forest-foreground/80">"{t.home.quote}"</p>
+          <p className="font-display italic text-accent">"{t.home.quote}"</p>
         </div>
         <div>
           <h2 className="eyebrow !text-forest-foreground/80 mb-4">{t.footer.pages}</h2>

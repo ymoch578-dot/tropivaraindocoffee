@@ -47,7 +47,7 @@ function Quality() {
         <ol className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {q.qc.map((step, i) => (
             <li key={step.t} className="bg-background p-7">
-              <span aria-hidden="true" className="font-display text-3xl text-forest">{String(i + 1).padStart(2, "0")}</span>
+              <span aria-hidden="true" className="font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="mt-4 text-xl text-forest-deep">{step.t}</h3>
               <p className="mt-2 text-muted-foreground">{step.d}</p>
             </li>

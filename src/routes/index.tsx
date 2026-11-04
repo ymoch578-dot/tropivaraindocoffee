@@ -111,7 +111,7 @@ function Home() {
           <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.whyTitle}</h2>
           <dl className="mt-10 grid gap-x-16 gap-y-10 md:grid-cols-2">
             {h.why.map((c) => (
-              <div key={c.t} className="border-l-2 border-forest/25 pl-6">
+              <div key={c.t} className="border-l-2 border-coffee/45 pl-6">
                 <dt className="text-2xl font-display text-forest-deep">{c.t}</dt>
                 <dd className="mt-2 max-w-md text-muted-foreground">{c.d}</dd>
               </div>

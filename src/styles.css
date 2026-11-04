@@ -55,23 +55,23 @@
 
   --ivory: oklch(0.985 0.012 155);
   --background: oklch(0.978 0.022 155);
-  --foreground: oklch(0.24 0.035 155);
+  --foreground: oklch(0.26 0.045 155);
   --card: oklch(0.997 0.004 155);
-  --card-foreground: oklch(0.24 0.035 155);
+  --card-foreground: oklch(0.26 0.045 155);
   --popover: oklch(0.997 0.004 155);
-  --popover-foreground: oklch(0.24 0.035 155);
+  --popover-foreground: oklch(0.26 0.045 155);
   --forest: oklch(0.36 0.07 155);
   --forest-deep: oklch(0.25 0.05 155);
-  --forest-foreground: oklch(0.985 0.008 155);
-  --coffee: oklch(0.45 0.07 50);
+  --forest-foreground: oklch(0.985 0.012 155);
+  --coffee: oklch(0.47 0.09 55);
   --primary: var(--forest);
   --primary-foreground: var(--forest-foreground);
   --secondary: oklch(0.94 0.042 155);
-  --secondary-foreground: oklch(0.24 0.035 155);
+  --secondary-foreground: oklch(0.26 0.045 155);
   --muted: oklch(0.93 0.035 155);
-  --muted-foreground: oklch(0.42 0.04 155);
-  --accent: oklch(0.80 0.095 155);
-  --accent-foreground: oklch(0.28 0.06 155);
+  --muted-foreground: oklch(0.46 0.05 55);
+  --accent: oklch(0.82 0.07 70);
+  --accent-foreground: oklch(0.28 0.05 55);
   --destructive: oklch(0.52 0.19 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.86 0.032 155);
@@ -110,7 +110,7 @@
   font-style: italic;
   font-family: var(--font-display);
   font-weight: 400;
-  color: var(--color-forest);
+  color: var(--color-coffee);
 }
 
 
