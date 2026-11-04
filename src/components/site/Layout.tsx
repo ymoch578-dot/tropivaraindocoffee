@@ -83,7 +83,7 @@ export function Footer() {
       <div className="container-page grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div className="space-y-4 max-w-sm">
           <Logo light />
-          <p className="text-sm text-forest-foreground/75">{t.footer.tagline}</p>
+          <p className="text-sm text-forest-foreground/85">{t.footer.tagline}</p>
           <p className="font-display italic text-accent">"{t.home.quote}"</p>
         </div>
         <div>
@@ -105,7 +105,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-forest-foreground/15">
-        <div className="container-page py-5 text-xs text-forest-foreground/80">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
+        <div className="container-page py-5 text-xs text-forest-foreground/90">© {new Date().getFullYear()} Tropivara. {t.footer.rights}</div>
       </div>
     </footer>
   );

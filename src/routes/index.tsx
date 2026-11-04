@@ -41,7 +41,7 @@ function Home() {
             </div>
             <dl className="mt-12 flex gap-10 border-t border-border pt-6">
               {h.stats.map((s) => (
-                <div key={s.l}><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-forest">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
+                <div key={s.l}><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
               ))}
             </dl>
           </div>
