@@ -6,9 +6,9 @@ export const WHATSAPP_DISPLAY = "+62 851 9657 2911";
 export const BUSINESS_EMAIL = "salestropivaraindonesia@gmail.com";
 export const SECONDARY_EMAIL = "sales@tropivaraindo.biz.id";
 export const SOCIALS = {
-  instagram: { label: "@tropivaraindonesia", url: "https://www.instagram.com/tropivaraindonesia" },
-  facebook: { label: "Tropivara Indonesia", url: "https://www.facebook.com/search/top?q=Tropivara%20Indonesia" },
-  linkedin: { label: "Tropivara Indonesia", url: "https://www.linkedin.com/search/results/all/?keywords=Tropivara%20Indonesia" },
+  instagram: { label: "@tropivaraindonesia", url: "https://www.instagram.com/tropivaraindonesia/?utm_source=ig_web_button_share_sheet" },
+  facebook: { label: "Tropivara Indonesia", url: "https://web.facebook.com/tropivaraindonesia" },
+  linkedin: { label: "Tropivara Indonesia", url: "https://www.linkedin.com/in/tropivara-indonesia-3726a8440" },
 };
 export const WEBSITE_URL = "https://tropivaraindo.biz.id";
 
