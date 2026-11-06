@@ -39,9 +39,9 @@ function Home() {
               <Link to="/products" className="btn btn-primary">{t.common.explore} <ArrowRight className="h-4 w-4" /></Link>
               <Link to="/contact" className="btn btn-outline text-forest">{t.common.contactTeam}</Link>
             </div>
-            <dl className="mt-12 flex gap-10 border-t border-border pt-6">
+            <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-6">
               {h.stats.map((s) => (
-                <div key={s.l}><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
+                <div key={s.l} className="text-center"><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
               ))}
             </dl>
           </div>
@@ -95,9 +95,9 @@ function Home() {
         </div>
       </section>
 
-      <section className="container-page grid items-center gap-12 py-20 md:grid-cols-2">
-        <img src={beds.url} alt="Coffee harvest with cherries drying" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
-        <div>
+      <section className="container-page grid items-stretch gap-12 py-20 md:grid-cols-2">
+        <img src={beds.url} alt="Coffee harvest with cherries drying" loading="lazy" width={1200} height={1200} className="aspect-[4/3] h-full w-full object-cover md:aspect-auto md:max-h-[26rem]" />
+        <div className="self-center">
           <p className="eyebrow">{h.qcEyebrow}</p>
           <h2 className="mt-3 text-3xl md:text-4xl text-forest-deep">{h.qcTitle}</h2>
           <p className="mt-5 text-lg text-muted-foreground">{h.qcBody}</p>

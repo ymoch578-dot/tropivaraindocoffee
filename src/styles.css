@@ -80,6 +80,7 @@
 }
 
 @layer base {
+  p, dd { text-align: justify; hyphens: auto; }
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
   body {
