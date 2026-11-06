@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useI18n } from "@/i18n/LanguageProvider";
+import beans from "@/assets/green-coffee-photo.jpg.asset.json";
 import { PageHeader } from "@/components/site/Layout";
 import { ProductCard } from "@/components/site/ProductCard";
 import { getOrigin, origins, products, type Species } from "@/data/products";
@@ -26,7 +27,7 @@ function Catalog() {
   const shown = origins.filter((o) => filter === "all" || o.species === filter);
   return (
     <>
-      <PageHeader eyebrow={t.products.eyebrow} title={t.products.title} lead={t.products.lead} />
+      <PageHeader image={beans.url} eyebrow={t.products.eyebrow} title={t.products.title} lead={t.products.lead} />
       <section className="container-page py-14">
         <div role="group" aria-label={t.products.filterLabel} className="flex flex-wrap gap-2">
           {opts.map((o) => (

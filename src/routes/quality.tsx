@@ -23,9 +23,9 @@ function Quality() {
   const q = t.quality;
   return (
     <>
-      <PageHeader eyebrow={q.eyebrow} title={q.title} lead={q.lead} />
+      <PageHeader image={beds.url} eyebrow={q.eyebrow} title={q.title} lead={q.lead} />
       <section className="container-page py-20">
-        <h2 className="text-3xl text-forest-deep">{q.confirmedT}</h2>
+        <h2 className="text-center text-3xl text-forest-deep">{q.confirmedT}</h2>
         <div className="mt-8 grid gap-px bg-border sm:grid-cols-2">
           {q.confirmed.map((c) => <div key={c.t} className="bg-background p-7"><h3 className="text-xl text-forest-deep">{c.t}</h3><p className="mt-2 text-muted-foreground">{c.d}</p></div>)}
         </div>
@@ -42,12 +42,12 @@ function Quality() {
         </div>
       </section>
       <section className="container-page py-20">
-        <h2 className="text-3xl text-forest-deep">{q.qcT}</h2>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{q.qcLead}</p>
+        <h2 className="text-center text-3xl text-forest-deep">{q.qcT}</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">{q.qcLead}</p>
         <ol className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {q.qc.map((step, i) => (
             <li key={step.t} className="bg-background p-7">
-              <span aria-hidden="true" className="font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
+              <span aria-hidden="true" className="block text-center font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="mt-4 text-xl text-forest-deep">{step.t}</h3>
               <p className="mt-2 text-muted-foreground">{step.d}</p>
             </li>

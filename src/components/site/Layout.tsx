@@ -122,13 +122,15 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
-export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
+export function PageHeader({ eyebrow, title, lead, image }: { eyebrow: string; title: string; lead?: string; image?: string }) {
   return (
-    <section className="border-b border-border grain">
-      <div className="container-page py-16 md:py-24">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl leading-[1.05] md:text-6xl text-forest-deep">{title}</h1>
-        {lead && <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{lead}</p>}
+    <section className="relative isolate overflow-hidden border-b border-border bg-forest-deep text-forest-foreground">
+      {image && <img src={image} alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover" />}
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-forest-deep/75" />
+      <div className="container-page flex flex-col items-center py-20 text-center md:py-28">
+        <p className="eyebrow !text-accent">{eyebrow}</p>
+        <h1 className="mt-4 max-w-3xl text-4xl leading-[1.05] md:text-6xl">{title}</h1>
+        {lead && <p className="mt-6 max-w-2xl text-lg text-forest-foreground/90 [text-align-last:center]" style={{ textAlign: "justify" }}>{lead}</p>}
       </div>
     </section>
   );
