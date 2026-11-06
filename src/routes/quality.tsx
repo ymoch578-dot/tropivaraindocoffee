@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
+import headerQuality from "@/assets/header-quality.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { InquiryCta } from "@/components/site/InquiryCta";
 import beds from "@/assets/coffee-harvest-photo.jpg.asset.json";
@@ -23,7 +24,7 @@ function Quality() {
   const q = t.quality;
   return (
     <>
-      <PageHeader image={beds.url} eyebrow={q.eyebrow} title={q.title} lead={q.lead} />
+      <PageHeader image={headerQuality} eyebrow={q.eyebrow} title={q.title} lead={q.lead} />
       <section className="container-page py-20">
         <h2 className="text-center text-3xl text-forest-deep">{q.confirmedT}</h2>
         <div className="mt-8 grid gap-px bg-border sm:grid-cols-2">
