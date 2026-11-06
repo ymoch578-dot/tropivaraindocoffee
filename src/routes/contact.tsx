@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CheckCircle2, Globe, Mail, MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
-import greenBeans from "@/assets/green-coffee-photo.jpg.asset.json";
 import headerContact from "@/assets/header-contact.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { getProduct, productLabel, products } from "@/data/products";

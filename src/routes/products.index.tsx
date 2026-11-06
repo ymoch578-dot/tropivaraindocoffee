@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useI18n } from "@/i18n/LanguageProvider";
-import beans from "@/assets/green-coffee-photo.jpg.asset.json";
 import headerProducts from "@/assets/header-products.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { ProductCard } from "@/components/site/ProductCard";

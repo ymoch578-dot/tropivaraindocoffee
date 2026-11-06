@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
-import harvest from "@/assets/coffee-harvest-photo.jpg.asset.json";
 import headerOrigins from "@/assets/header-origins.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { origins, products, productImage } from "@/data/products";
