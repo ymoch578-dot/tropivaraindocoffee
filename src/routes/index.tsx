@@ -113,7 +113,7 @@ function Home() {
             {h.why.map((c) => (
               <div key={c.t} className="text-center">
                 <dt className="text-2xl font-display text-forest-deep">{c.t}</dt>
-                <dd className="mx-auto mt-2 max-w-md text-muted-foreground">{c.d}</dd>
+                <dd className="mx-auto mt-2 max-w-md text-center text-muted-foreground">{c.d}</dd>
               </div>
             ))}
           </dl>
