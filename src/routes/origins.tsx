@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
-import harvest from "@/assets/coffee-harvest-photo.jpg.asset.json";
+import headerOrigins from "@/assets/header-origins.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { origins, products, productImage } from "@/data/products";
 import { InquiryCta } from "@/components/site/InquiryCta";
@@ -23,7 +23,7 @@ function Origins() {
   const { t } = useI18n();
   return (
     <>
-      <PageHeader image={harvest.url} eyebrow={t.originsPage.eyebrow} title={t.originsPage.title} lead={t.originsPage.lead} />
+      <PageHeader image={headerOrigins} eyebrow={t.originsPage.eyebrow} title={t.originsPage.title} lead={t.originsPage.lead} />
       <div className="container-page py-10">
         {origins.map((o, i) => {
           const lots = products.filter((p) => p.originId === o.id);

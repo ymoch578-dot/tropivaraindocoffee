@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/LanguageProvider";
+import headerAbout from "@/assets/header-about.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { InquiryCta } from "@/components/site/InquiryCta";
 import cherries from "@/assets/coffee-harvest-photo.jpg.asset.json";
@@ -23,7 +24,7 @@ function About() {
   const a = t.about;
   return (
     <>
-      <PageHeader image={cherries.url} eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
+      <PageHeader image={headerAbout} eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
       <section className="container-page grid gap-12 py-20 md:grid-cols-2">
         <img src={cherries.url} alt="Hand holding harvested coffee cherries" loading="lazy" width={1200} height={1200} className="aspect-square w-full object-cover" />
         <div className="space-y-5">

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CheckCircle2, Globe, Mail, MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageProvider";
-import greenBeans from "@/assets/green-coffee-photo.jpg.asset.json";
+import headerContact from "@/assets/header-contact.jpg";
 import { PageHeader } from "@/components/site/Layout";
 import { getProduct, productLabel, products } from "@/data/products";
 import { BUSINESS_EMAIL, SECONDARY_EMAIL, SOCIALS, WHATSAPP_DISPLAY, WEBSITE_URL, mailtoLink, whatsappLink } from "@/config/contact";
@@ -67,7 +67,7 @@ function Contact() {
 
   return (
     <>
-      <PageHeader image={greenBeans.url} eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
+      <PageHeader image={headerContact} eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
       <section className="container-page grid items-start gap-14 py-16 lg:grid-cols-[1fr_1.4fr]">
         <aside className="space-y-10">
           <div>
