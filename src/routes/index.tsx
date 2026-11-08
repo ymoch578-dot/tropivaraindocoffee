@@ -48,7 +48,7 @@ function Home() {
         <div className="container-page pb-14 pt-2 md:pb-20">
           <dl className="mx-auto grid max-w-2xl grid-cols-3 gap-6 border-t border-border pt-6">
             {h.stats.map((s) => (
-              <div key={s.l} className="text-center"><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
+              <div key={s.l} className="text-center"><dt className="sr-only">{s.l}</dt><dd className="text-center"><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
             ))}
           </dl>
         </div>
