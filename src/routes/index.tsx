@@ -30,7 +30,7 @@ function Home() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_1fr]">
+        <div className="container-page grid items-center gap-10 pt-14 pb-6 md:pt-20 md:pb-8 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <p className="eyebrow">{h.eyebrow}</p>
             <h1 className="mt-5 text-4xl leading-[1.02] text-forest-deep sm:text-5xl lg:text-[4.2rem]">{h.title}</h1>
@@ -39,16 +39,18 @@ function Home() {
               <Link to="/products" className="btn btn-primary">{t.common.explore} <ArrowRight className="h-4 w-4" /></Link>
               <Link to="/contact" className="btn btn-outline text-forest">{t.common.contactTeam}</Link>
             </div>
-            <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-6">
-              {h.stats.map((s) => (
-                <div key={s.l} className="text-center"><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
-              ))}
-            </dl>
           </div>
           <figure className="relative pb-16 pl-10 lg:pl-16">
             <img src={hero.url} alt="Close-up of unroasted coffee beans" width={1600} height={1072} className="aspect-[5/6] w-full object-cover" />
             <img src={tv01.url} alt="Tropivara Excelsa green beans" width={606} height={800} className="absolute bottom-0 left-0 w-2/5 border-8 border-background object-cover shadow-sm" />
           </figure>
+        </div>
+        <div className="container-page pb-14 pt-2 md:pb-20">
+          <dl className="mx-auto grid max-w-2xl grid-cols-3 gap-6 border-t border-border pt-6">
+            {h.stats.map((s) => (
+              <div key={s.l} className="text-center"><dt className="sr-only">{s.l}</dt><dd><span className="font-display text-4xl text-coffee">{s.n}</span><span className="block text-xs uppercase tracking-widest text-muted-foreground">{s.l}</span></dd></div>
+            ))}
+          </dl>
         </div>
       </section>
 
