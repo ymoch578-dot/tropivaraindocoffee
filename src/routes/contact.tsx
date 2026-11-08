@@ -152,7 +152,7 @@ function Contact() {
       </div></div>
       <section className="border-t border-border bg-secondary/50">
         <div className="container-page py-16">
-          <h2 className="text-3xl text-forest-deep">{c.faqT}</h2>
+          <h2 className="text-center text-3xl text-forest-deep">{c.faqT}</h2>
           <dl className="mt-8 grid gap-px bg-border md:grid-cols-2">
             {c.faq.map((f) => (
               <div key={f.q} className="bg-background p-6"><dt className="font-medium text-forest-deep">{f.q}</dt><dd className="mt-2 text-sm text-muted-foreground">{f.a}</dd></div>

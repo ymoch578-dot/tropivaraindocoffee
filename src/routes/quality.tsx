@@ -45,19 +45,22 @@ function Quality() {
       <section className="container-page py-20">
         <h2 className="text-center text-3xl text-forest-deep">{q.qcT}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">{q.qcLead}</p>
-        <ol className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {q.qc.map((step, i) => (
-            <li key={step.t} className="bg-background p-7">
-              <span aria-hidden="true" className="block text-center font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-4 text-xl text-forest-deep">{step.t}</h3>
-              <p className="mt-2 text-muted-foreground">{step.d}</p>
-            </li>
-          ))}
+        <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {q.qc.map((step, i) => {
+            const last = i === q.qc.length - 1;
+            return (
+              <li key={step.t} className={`border border-border bg-background p-7 ${last ? "mx-auto w-full sm:col-span-2 sm:max-w-sm lg:col-span-1 lg:col-start-2 lg:max-w-none" : ""}`}>
+                <span aria-hidden="true" className="block text-center font-display text-3xl text-coffee">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-4 text-xl text-forest-deep">{step.t}</h3>
+                <p className="mt-2 text-muted-foreground">{step.d}</p>
+              </li>
+            );
+          })}
         </ol>
       </section>
       <section className="border-t border-border">
         <div className="container-page py-20 max-w-3xl">
-          <h2 className="text-3xl text-forest-deep">{q.infoT}</h2>
+          <h2 className="text-center text-3xl text-forest-deep">{q.infoT}</h2>
           <ul className="mt-6 list-disc space-y-3 pl-5 text-muted-foreground">{q.info.map((i) => <li key={i}>{i}</li>)}</ul>
         </div>
       </section>
