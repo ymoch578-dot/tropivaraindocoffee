@@ -12,3 +12,4 @@
 - Use CDN asset pointers for imported brand imagery and real stock photography; keep attribution alongside the assets so their origin remains auditable.
 - The shared site Logo uses CDN pointers for the supplied artwork with transparent background and trimmed empty margins; retain its geometry and derive the local favicon from the same artwork so branding remains consistent.
 - The global stylesheet justifies `p` and `dd` text, which overrides alignment inherited from a parent; when a paragraph or definition value must be centered or right-aligned, put the alignment utility on that `p`/`dd` element itself.
+- Shared decorative coffee engravings use non-interactive CSS masks in section padding through SiteLayout hooks; keep ornaments outside content and use semantic theme tokens so all routes remain consistent.

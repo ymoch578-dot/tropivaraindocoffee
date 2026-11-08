@@ -77,6 +77,8 @@
   --border: oklch(0.86 0.032 155);
   --input: oklch(0.80 0.038 155);
   --ring: oklch(0.45 0.08 155);
+  --ornament: color-mix(in oklab, var(--forest) 32%, transparent);
+  --ornament-on-dark: color-mix(in oklab, var(--forest-foreground) 32%, transparent);
 }
 
 @layer base {
@@ -163,4 +165,67 @@
 
 @utility grain {
   background-color: var(--color-secondary);
+}
+
+/* Small botanical engravings sit in section padding, never behind copy. */
+.site-main > section {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-main > section::after,
+.site-footer::after {
+  content: "";
+  position: absolute;
+  right: max(1.5rem, calc((100% - 75rem) / 2));
+  bottom: 0.65rem;
+  width: 6rem;
+  height: 3.4rem;
+  background-color: var(--ornament);
+  mask: url("./assets/coffee-sprig.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.site-main > section:nth-of-type(2n)::after {
+  mask-image: url("./assets/coffee-bean-detail.svg");
+}
+
+.site-main > section.bg-forest,
+.site-main > section.bg-forest-deep,
+.site-footer {
+  --ornament: var(--ornament-on-dark);
+}
+
+.site-page-header::before {
+  content: "";
+  position: absolute;
+  inset: 1.25rem;
+  border-inline: 1px solid var(--ornament-on-dark);
+  pointer-events: none;
+}
+
+.site-footer {
+  position: relative;
+}
+
+.site-footer::after {
+  bottom: 5.5rem;
+  width: 7rem;
+}
+
+@media (max-width: 639px) {
+  .site-main > section::after {
+    width: 4rem;
+    height: 2rem;
+    right: 1.25rem;
+    bottom: 0.4rem;
+  }
+  .site-page-header::before { inset: 0.75rem; }
+  .site-footer::after { width: 4.5rem; height: 2.5rem; bottom: 4.75rem; }
+}
+
+@media print {
+  .site-main > section::after,
+  .site-page-header::before,
+  .site-footer::after { display: none; }
 }
