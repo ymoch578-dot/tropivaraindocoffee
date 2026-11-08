@@ -78,7 +78,7 @@ export function Footer() {
   const { t } = useI18n();
   const wa = whatsappLink("Hello Tropivara");
   return (
-    <footer className="bg-forest-deep text-forest-foreground">
+    <footer className="site-footer bg-forest-deep text-forest-foreground">
       <div aria-hidden="true" className="h-1.5 w-full bg-forest" />
       <div className="container-page grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div className="space-y-4 max-w-sm">
@@ -116,7 +116,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 btn btn-primary">Skip to content</a>
       <Header />
-      <main id="main" className="flex-1">{children}</main>
+      <main id="main" className="site-main flex-1">{children}</main>
       <Footer />
     </div>
   );
@@ -124,7 +124,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 export function PageHeader({ eyebrow, title, lead, image }: { eyebrow: string; title: string; lead?: string; image?: string }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-border bg-forest-deep text-forest-foreground">
+    <section className="site-page-header relative isolate overflow-hidden border-b border-border bg-forest-deep text-forest-foreground">
       {image && <img src={image} alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover" />}
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-forest-deep/75" />
       <div className="container-page flex flex-col items-center py-20 text-center md:py-28">
