@@ -11,10 +11,12 @@ export const Route = createFileRoute("/about")({
       { title: "About Tropivara — Indonesian Green Coffee Supplier" },
       { name: "description", content: "Who Tropivara is, how we work with business buyers, and our commitment to transparent product information." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://tropivaraindocoffee.lovable.app/about" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "About Tropivara" },
       { property: "og:description", content: "An Indonesian green coffee supplier for wholesalers, roasters and coffee manufacturers." },
     ],
+    links: [{ rel: "canonical", href: "https://tropivaraindocoffee.lovable.app/about" }],
   }),
   component: About,
 });

@@ -14,10 +14,12 @@ export const Route = createFileRoute("/")({
       { title: "Tropivara — Indonesian Green Coffee for Roasters & Wholesalers" },
       { name: "description", content: "Green Excelsa, Arabica and Robusta beans from eight Indonesian origins, supplied to wholesalers, roasters and coffee manufacturers." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://tropivaraindocoffee.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara — Indonesian Green Coffee Supplier" },
       { property: "og:description", content: "B2B green coffee from Wonosalam, Gayo, Ijen, Flores, Arjuno, Temanggung, Dampit and Pagar Alam." },
     ],
+    links: [{ rel: "canonical", href: "https://tropivaraindocoffee.lovable.app/" }],
   }),
   component: Home,
 });
