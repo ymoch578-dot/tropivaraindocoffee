@@ -11,10 +11,12 @@ export const Route = createFileRoute("/origins")({
       { title: "Coffee Origins — Java, Sumatra & Flores | Tropivara" },
       { name: "description", content: "The eight Indonesian origins in Tropivara's green coffee catalogue, with species, altitude and available products." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://tropivaraindocoffee.lovable.app/origins" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara Coffee Origins" },
       { property: "og:description", content: "Excelsa, Arabica and Robusta origins across Java, Sumatra and Flores." },
     ],
+    links: [{ rel: "canonical", href: "https://tropivaraindocoffee.lovable.app/origins" }],
   }),
   component: Origins,
 });

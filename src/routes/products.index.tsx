@@ -12,10 +12,12 @@ export const Route = createFileRoute("/products/")({
       { title: "Green Coffee Catalogue — Tropivara" },
       { name: "description", content: "Fifteen green coffee products from eight Indonesian origins: Excelsa from Wonosalam, Arabica from Gayo, Ijen, Flores and Arjuno, Robusta from Temanggung, Dampit and Pagar Alam." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://tropivaraindocoffee.lovable.app/products" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara Green Coffee Catalogue" },
       { property: "og:description", content: "Specifications for every Excelsa, Arabica and Robusta product. Pricing on quotation." },
     ],
+    links: [{ rel: "canonical", href: "https://tropivaraindocoffee.lovable.app/products" }],
   }),
   component: Catalog,
 });

@@ -12,12 +12,15 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tropivara — Indonesian Green Coffee for Roasters & Wholesalers" },
-      { name: "description", content: "Green Excelsa, Arabica and Robusta beans from eight Indonesian origins, supplied to wholesalers, roasters and coffee manufacturers." },
+      { name: "description", content: "Indonesian green coffee beans supplier (green bean kopi / kopi hijau) — Excelsa, Arabica and Robusta from eight origins for wholesalers, roasters and coffee manufacturers. Inquire via WhatsApp or email." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://tropivaraindocoffee.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Tropivara — Indonesian Green Coffee Supplier" },
       { property: "og:description", content: "B2B green coffee from Wonosalam, Gayo, Ijen, Flores, Arjuno, Temanggung, Dampit and Pagar Alam." },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Tropivara Indonesia","url":"https://tropivaraindocoffee.lovable.app/","logo":"https://tropivaraindocoffee.lovable.app/favicon.png","email":"salestropivaraindonesia@gmail.com","telephone":"+62 851 9657 2911","address":{"@type":"PostalAddress","addressRegion":"Gresik Regency, East Java","addressCountry":"ID"},"sameAs":["https://www.instagram.com/tropivaraindonesia/","https://web.facebook.com/tropivaraindonesia","https://www.linkedin.com/in/tropivara-indonesia-3726a8440"],"description":"Indonesian green coffee supplier for wholesalers, roasters and manufacturers."}) }],
+    links: [{ rel: "canonical", href: "https://tropivaraindocoffee.lovable.app/" }],
   }),
   component: Home,
 });
