@@ -94,7 +94,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; text-transform: capitalize; }
   :focus-visible { outline: 2px solid var(--color-ring); outline-offset: 3px; }
 }
 
@@ -114,6 +114,7 @@
   font-family: var(--font-display);
   font-weight: 400;
   color: var(--color-coffee);
+  text-transform: capitalize;
 }
 
 
