@@ -18,11 +18,13 @@ export const Route = createFileRoute("/products/$slug")({
       meta: [
         { title: `${label} — Tropivara Green Coffee` },
         { name: "description", content: p ? `${label}: ${p.process.en}.${p.flavor ? ` ${p.flavor.en}.` : ""}` : "Tropivara green coffee product." },
-        { property: "og:type", content: "website" },
+        { property: "og:type", content: "product" },
+        ...(p ? [{ property: "og:url", content: `https://tropivaraindocoffee.lovable.app/products/${p.slug}` }] : []),
         { name: "twitter:card", content: "summary_large_image" },
         { property: "og:title", content: `${label} — Tropivara` },
         { property: "og:description", content: p ? `${p.flavor ? `${p.flavor.en}. ` : ""}${p.process.en}.` : "Tropivara green coffee." },
       ],
+      links: p ? [{ rel: "canonical", href: `https://tropivaraindocoffee.lovable.app/products/${p.slug}` }] : [],
     };
   },
   component: Detail,
